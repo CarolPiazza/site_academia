@@ -16,7 +16,7 @@ body {
     border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #800020
+    background: #730202
 ;
 }
 
@@ -38,7 +38,7 @@ body {
     background: rgba(10, 10, 12, 0.85);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid #ffffff14;
 }
 
 /* Shine animation for primary CTA */

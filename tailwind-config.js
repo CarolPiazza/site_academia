@@ -6,9 +6,9 @@ tailwind.config = {
                             bg: '#0a0a0c',
                             card: '#121318',
                             surface: '#191b22',
-                            gold: '#f53a0b',
-                            goldLight: '#800020',
-                            goldDark: '#800020',
+                            gold: '#730202',
+                            goldLight: '#730202',
+                            goldDark: '#730202',
                         }
                     },
                     fontFamily: {
@@ -16,8 +16,8 @@ tailwind.config = {
                         display: ['Oswald', 'sans-serif'],
                     },
                     boxShadow: {
-                        'gold': '0 10px 30px -5px rgba(245, 158, 11, 0.25)',
-                        'gold-lg': '0 20px 40px -10px rgba(245, 158, 11, 0.4)',
+                        'gold': '0 10px 30px -5px #FFBC05',
+                        'gold-lg': '0 20px 40px -10px #FFBC05',
                     }
                 }
             }
