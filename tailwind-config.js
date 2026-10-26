@@ -3,12 +3,12 @@ tailwind.config = {
                 extend: {
                     colors: {
                         olimpus: {
-                            bg: '#0a0a0c',
-                            card: '#121318',
-                            surface: '#191b22',
+                            bg: '#ededf1',
+                            card: '#f5f5f5',
+                            surface: '#f1f2f6',
                             gold: '#730202',
                             goldLight: '#730202',
-                            goldDark: '#730202',
+                            goldDark: '#b93737',
                         }
                     },
                     fontFamily: {
