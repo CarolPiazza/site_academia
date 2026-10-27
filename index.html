@@ -21,19 +21,19 @@
 
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="antialiased selection:bg-olimpus-gold selection:text-black">
+<body class="antialiased selection:bg-olimpus-gold selection:text-white">
 
     <!-- TOP BAR DE STATUS EM TEMPO REAL -->
-    <div class="bg-[#060608] border-b border-white/5 text-xs py-2 px-4">
+    <div class="bg-white border-b border-zinc-200 text-xs py-2 px-4">
         <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
             <div class="flex items-center gap-3">
-                <div id="live-status-badge" class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                    <span id="live-status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <div id="live-status-badge" class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full font-semibold bg-emerald-500/15 text-emerald-700 border border-emerald-500/30">
+                    <span id="live-status-dot" class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
                     <span id="live-status-text">VERIFICANDO HORÁRIO...</span>
                 </div>
-                <span id="live-hours-info" class="text-zinc-400 hidden sm:inline">Seg-Sex: 05h às 00h</span>
+                <span id="live-hours-info" class="text-zinc-600 hidden sm:inline">Seg-Sex: 05h às 00h</span>
             </div>
-            <div class="flex items-center gap-4 text-zinc-400">
+            <div class="flex items-center gap-4 text-zinc-600">
                 <a href="https://maps.google.com/?q=Rua+Curitiba,+701+-+Santa+Maria,+Chapeco+-+SC" target="_blank" rel="noopener noreferrer" class="hover:text-olimpus-gold transition flex items-center gap-1.5">
                     <i class="fa-solid fa-location-dot text-olimpus-gold"></i>
                     <span>Rua Curitiba, 701 - Santa Maria, Chapecó/SC</span>
@@ -50,15 +50,15 @@
     <header id="main-header" class="sticky top-0 z-50 transition-all duration-300 py-4 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <!-- Logo -->
-            
+            <a href="#inicio" class="flex items-center gap-3">
                 <div>
-                    <span class="font-display font-bold text-2xl tracking-wider text-white block leading-none">OLIMPUS <span class="text-olimpus-gold">GROUP</span></span>
-                    <span class="text-[10px] uppercase tracking-[0.22em] text-zinc-400 block mt-0.5">Complexo Esportivo</span>
+                    <span class="font-display font-bold text-2xl tracking-wider text-zinc-900 block leading-none">OLIMPUS <span class="text-olimpus-gold">GROUP</span></span>
+                    <span class="text-[10px] uppercase tracking-[0.22em] text-zinc-500 block mt-0.5">Complexo Esportivo</span>
                 </div>
             </a>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-zinc-300">
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-zinc-700">
                 <a href="#inicio" class="hover:text-olimpus-gold transition">Início</a>
                 <a href="#sobre" class="hover:text-olimpus-gold transition">Sobre</a>
                 <a href="#modalidades" class="hover:text-olimpus-gold transition">Modalidades</a>
@@ -73,33 +73,33 @@
                 <button onclick="openQuizModal()" class="px-3.5 py-2 rounded-xl border border-olimpus-gold/40 text-olimpus-gold hover:bg-olimpus-gold/10 text-xs font-semibold uppercase tracking-wider transition flex items-center gap-1.5">
                     <i class="fa-solid fa-wand-magic-sparkles"></i> Plano Ideal
                 </button>
-                <a href="#planos" class="btn-shine bg-gradient-to-r from-olimpus-gold to-amber-500 hover:from-amber-400 hover:to-olimpus-gold text-black font-bold text-sm px-5 py-2.5 rounded-xl shadow-gold transition transform hover:-translate-y-0.5">
+                <a href="#planos" class="btn-shine bg-gradient-to-r from-olimpus-gold to-amber-500 hover:from-amber-500 hover:to-olimpus-gold text-white font-bold text-sm px-5 py-2.5 rounded-xl shadow-gold transition transform hover:-translate-y-0.5">
                     MATRICULE-SE
                 </a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" aria-label="Abrir Menu" class="lg:hidden w-11 h-11 rounded-xl bg-olimpus-card border border-white/10 flex items-center justify-center text-zinc-200 hover:text-olimpus-gold transition">
+            <button id="mobile-menu-btn" aria-label="Abrir Menu" class="lg:hidden w-11 h-11 rounded-xl bg-olimpus-card border border-zinc-300 flex items-center justify-center text-zinc-800 hover:text-olimpus-gold transition shadow-sm">
                 <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
             </button>
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden lg:hidden mt-4 bg-olimpus-card/95 backdrop-blur-xl border border-white/10 rounded-2xl p-5 shadow-2xl">
-            <nav class="flex flex-col space-y-3 text-base font-medium text-zinc-200">
-                <a href="#inicio" class="mobile-link py-2 px-3 rounded-lg hover:bg-white/5 hover:text-olimpus-gold transition">Início</a>
-                <a href="#sobre" class="mobile-link py-2 px-3 rounded-lg hover:bg-white/5 hover:text-olimpus-gold transition">Sobre o Complexo</a>
-                <a href="#modalidades" class="mobile-link py-2 px-3 rounded-lg hover:bg-white/5 hover:text-olimpus-gold transition">Estrutura & Modalidades</a>
-                <a href="#planos" class="mobile-link py-2 px-3 rounded-lg hover:bg-white/5 hover:text-olimpus-gold transition">Planos e Valores</a>
-                <a href="#comodidades" class="mobile-link py-2 px-3 rounded-lg hover:bg-white/5 hover:text-olimpus-gold transition">Comodidades</a>
-                <a href="#horarios" class="mobile-link py-2 px-3 rounded-lg hover:bg-white/5 hover:text-olimpus-gold transition">Horários de Funcionamento</a>
-                <a href="#contato" class="mobile-link py-2 px-3 rounded-lg hover:bg-white/5 hover:text-olimpus-gold transition">Agendar Aula / Contato</a>
+        <div id="mobile-menu" class="hidden lg:hidden mt-4 bg-white/95 backdrop-blur-xl border border-zinc-200 rounded-2xl p-5 shadow-2xl">
+            <nav class="flex flex-col space-y-3 text-base font-medium text-zinc-800">
+                <a href="#inicio" class="mobile-link py-2 px-3 rounded-lg hover:bg-zinc-100 hover:text-olimpus-gold transition">Início</a>
+                <a href="#sobre" class="mobile-link py-2 px-3 rounded-lg hover:bg-zinc-100 hover:text-olimpus-gold transition">Sobre o Complexo</a>
+                <a href="#modalidades" class="mobile-link py-2 px-3 rounded-lg hover:bg-zinc-100 hover:text-olimpus-gold transition">Estrutura & Modalidades</a>
+                <a href="#planos" class="mobile-link py-2 px-3 rounded-lg hover:bg-zinc-100 hover:text-olimpus-gold transition">Planos e Valores</a>
+                <a href="#comodidades" class="mobile-link py-2 px-3 rounded-lg hover:bg-zinc-100 hover:text-olimpus-gold transition">Comodidades</a>
+                <a href="#horarios" class="mobile-link py-2 px-3 rounded-lg hover:bg-zinc-100 hover:text-olimpus-gold transition">Horários de Funcionamento</a>
+                <a href="#contato" class="mobile-link py-2 px-3 rounded-lg hover:bg-zinc-100 hover:text-olimpus-gold transition">Agendar Aula / Contato</a>
             </nav>
-            <div class="mt-5 pt-4 border-t border-white/10 flex flex-col gap-3">
+            <div class="mt-5 pt-4 border-t border-zinc-200 flex flex-col gap-3">
                 <button onclick="openQuizModal(); toggleMobileMenu();" class="w-full py-3 rounded-xl border border-olimpus-gold/40 text-olimpus-gold font-semibold text-sm flex items-center justify-center gap-2">
                     <i class="fa-solid fa-wand-magic-sparkles"></i> Descubra Seu Plano Ideal
                 </button>
-                <a href="#planos" onclick="toggleMobileMenu()" class="w-full py-3 rounded-xl bg-olimpus-gold text-black font-bold text-center text-sm shadow-gold">
+                <a href="#planos" onclick="toggleMobileMenu()" class="w-full py-3 rounded-xl bg-olimpus-gold text-white font-bold text-center text-sm shadow-gold">
                     VER PLANOS PROMOCIONAIS
                 </a>
             </div>
@@ -107,43 +107,43 @@
     </header>
 
     <!-- 1. HERO SECTION -->
-    <section id="inicio" class="relative hero-bg min-h-[88vh] flex items-center py-16 lg:py-24 overflow-hidden border-b border-white/5">
+    <section id="inicio" class="relative hero-bg min-h-[88vh] flex items-center py-16 lg:py-24 overflow-hidden border-b border-zinc-200">
         <!-- Decorative Glows -->
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-olimpus-gold/15 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-olimpus-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 <!-- Left Column: Hero Text -->
                 <div class="lg:col-span-7 space-y-6 text-left">
-                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-olimpus-gold/15 border border-olimpus-gold/30 text-olimpus-gold text-xs sm:text-sm font-bold tracking-wider uppercase">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-olimpus-gold/10 border border-olimpus-gold/30 text-olimpus-gold text-xs sm:text-sm font-bold tracking-wider uppercase">
                         <i class="fa-solid fa-bolt"></i>
                         <span>COMPLEXO ESPORTIVO EM CHAPECÓ - SC</span>
                     </div>
 
-                    <h1 class="font-display font-bold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-black uppercase leading-[1.05]">
-                        RITMO DE <span class="text-transparent bg-clip-text bg-gradient-to-r from-olimpus-gold via-amber-400 to-yellow-200">CAMPEÃO</span>,<br>
+                    <h1 class="font-display font-bold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-zinc-900 uppercase leading-[1.05]">
+                        RITMO DE <span class="text-transparent bg-clip-text bg-gradient-to-r from-olimpus-gold via-red-700 to-amber-600">CAMPEÃO</span>,<br>
                         FOCO DE <span class="underline decoration-olimpus-gold/70 decoration-4 underline-offset-8">VENCEDOR</span>
                     </h1>
 
-                    <p class="text-zinc-300 text-base sm:text-lg lg:text-xl max-w-2xl font-normal leading-relaxed">
-                        Mais que uma academia: um ecossistema completo de alta performance e bem-estar. <strong class="text-black font-semibold">Musculação, CrossFit e  Pilates</strong> reunidos em uma estrutura monumental aberta 360 dias por ano.
+                    <p class="text-zinc-700 text-base sm:text-lg lg:text-xl max-w-2xl font-normal leading-relaxed">
+                        Mais que uma academia: um ecossistema completo de alta performance e bem-estar. <strong class="text-zinc-900 font-semibold">Musculação, CrossFit e Pilates</strong> reunidos em uma estrutura monumental aberta 360 dias por ano.
                     </p>
 
                     <!-- Action Buttons -->
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-                        <a href="#planos" class="btn-shine bg-gradient-to-r from-olimpus-gold to-amber-500 text-black font-extrabold text-base px-8 py-4 rounded-xl shadow-gold-lg flex items-center justify-center gap-3 transform hover:-translate-y-0.5 transition">
+                        <a href="#planos" class="btn-shine bg-gradient-to-r from-olimpus-gold to-amber-600 text-white font-extrabold text-base px-8 py-4 rounded-xl shadow-gold-lg flex items-center justify-center gap-3 transform hover:-translate-y-0.5 transition">
                             <span>VER PLANOS A PARTIR DE R$ 69,90</span>
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                        <a href="#contato" class="bg-white/5 hover:bg-white/10 border border-white/15 text-white font-semibold text-base px-7 py-4 rounded-xl flex items-center justify-center gap-2.5 transition">
+                        <a href="#contato" class="bg-white hover:bg-zinc-100 border border-zinc-300 text-zinc-900 font-semibold text-base px-7 py-4 rounded-xl flex items-center justify-center gap-2.5 shadow-sm transition">
                             <i class="fa-regular fa-calendar-check text-olimpus-gold"></i>
                             <span>Agendar Aula Experimental</span>
                         </a>
                     </div>
 
                     <!-- Quick Highlights -->
-                    <div class="pt-4 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-zinc-400">
+                    <div class="pt-4 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-zinc-600">
                         <div class="flex items-center gap-2">
                             <i class="fa-solid fa-circle-check text-olimpus-gold"></i>
                             <span>Zero Taxa de Adesão</span>
@@ -161,49 +161,49 @@
 
                 <!-- Right Column: Featured Promo Card -->
                 <div class="lg:col-span-5">
-                    <div class="relative bg-gradient-to-b from-olimpus-surface to-olimpus-card border border-olimpus-gold/30 rounded-3xl p-6 sm:p-8 shadow-gold-lg">
-                        <div class="absolute -top-3.5 right-6 bg-olimpus-gold text-black font-extrabold text-xs uppercase px-4 py-1 rounded-full tracking-wider shadow">
+                    <div class="relative bg-gradient-to-b from-white to-olimpus-surface border border-olimpus-gold/30 rounded-3xl p-6 sm:p-8 shadow-gold-lg">
+                        <div class="absolute -top-3.5 right-6 bg-olimpus-gold text-white font-extrabold text-xs uppercase px-4 py-1 rounded-full tracking-wider shadow">
                             Oferta de Boas-Vindas
                         </div>
 
-                        <div class="flex items-center justify-between border-b border-white/10 pb-5 mb-5">
+                        <div class="flex items-center justify-between border-b border-zinc-200 pb-5 mb-5">
                             <div>
                                 <span class="text-xs uppercase tracking-widest text-olimpus-gold font-bold">Plano Mais Escolhido</span>
-                                <h2 class="font-display text-3xl font-bold text-black mt-0.5">PLANO OLIMPUS</h2>
+                                <h2 class="font-display text-3xl font-bold text-zinc-900 mt-0.5">PLANO OLIMPUS</h2>
                             </div>
                             <div class="text-right">
-                                <span class="text-xs text-zinc-400 line-through block">De R$ 159,90</span>
+                                <span class="text-xs text-zinc-500 line-through block">De R$ 159,90</span>
                                 <div class="text-3xl font-extrabold text-olimpus-gold leading-none">
-                                    <span class="text-sm font-normal text-zinc-300">R$</span> 69,90
+                                    <span class="text-sm font-normal text-zinc-600">R$</span> 69,90
                                 </div>
-                                <span class="text-[11px] text-zinc-400">no 1º mês</span>
+                                <span class="text-[11px] text-zinc-500">no 1º mês</span>
                             </div>
                         </div>
 
-                        <ul class="space-y-3 text-sm text-zinc-300 mb-6">
+                        <ul class="space-y-3 text-sm text-zinc-700 mb-6">
                             <li class="flex items-center gap-3">
-                                <span class="w-5 h-5 rounded-full bg-olimpus-gold/20 text-olimpus-gold flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
+                                <span class="w-5 h-5 rounded-full bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
                                 <span>Musculação e Cardio livre todos os dias</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-5 h-5 rounded-full bg-olimpus-gold/20 text-olimpus-gold flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
+                                <span class="w-5 h-5 rounded-full bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
                                 <span>Treino atualizado a cada 45 dias + Olimpus APP</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-5 h-5 rounded-full bg-olimpus-gold/20 text-olimpus-gold flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
+                                <span class="w-5 h-5 rounded-full bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
                                 <span>Acesso à Sala de Poses iluminada</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-5 h-5 rounded-full bg-olimpus-gold/20 text-olimpus-gold flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
+                                <span class="w-5 h-5 rounded-full bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
                                 <span>Leve até <strong>5 convidados por mês</strong> para treinar</span>
                             </li>
                         </ul>
 
-                        <button onclick="selectPlanForWhatsApp('Plano Olimpus (Promo 1º mês R$ 69,90)')" class="w-full py-4 rounded-xl bg-olimpus-gold hover:bg-amber-400 text-black font-extrabold text-sm uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-gold">
+                        <button onclick="selectPlanForWhatsApp('Plano Olimpus (Promo 1º mês R$ 69,90)')" class="w-full py-4 rounded-xl bg-olimpus-gold hover:bg-olimpus-goldLight text-white font-extrabold text-sm uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-gold">
                             <i class="fa-brands fa-whatsapp text-lg"></i>
                             <span>Garantir Meu 1º Mês por R$ 69,90</span>
                         </button>
-                        <p class="text-[11px] text-center text-zinc-400 mt-3">
+                        <p class="text-[11px] text-center text-zinc-500 mt-3">
                             Sem taxa de adesão • Ativação imediata pelo WhatsApp
                         </p>
                     </div>
@@ -211,37 +211,37 @@
             </div>
 
             <!-- CONTADORES ANIMADOS EM JS -->
-            <div id="stats-counter-section" class="mt-16 pt-10 border-t border-white/10 grid grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-5 text-center hover:border-olimpus-gold/40 transition">
+            <div id="stats-counter-section" class="mt-16 pt-10 border-t border-zinc-300/80 grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white/80 border border-zinc-200 rounded-2xl p-5 text-center hover:border-olimpus-gold/40 shadow-sm transition">
                     <div class="font-display text-4xl sm:text-5xl font-bold text-olimpus-gold flex items-center justify-center">
                         <span class="counter-value" data-target="360">0</span>
                     </div>
-                    <p class="text-sm font-semibold text-black mt-1">Dias Aberto no Ano</p>
-                    <p class="text-xs text-zinc-400 mt-0.5">Domingos e Feriados inclusos</p>
+                    <p class="text-sm font-semibold text-zinc-900 mt-1">Dias Aberto no Ano</p>
+                    <p class="text-xs text-zinc-500 mt-0.5">Domingos e Feriados inclusos</p>
                 </div>
 
-                <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-5 text-center hover:border-olimpus-gold/40 transition">
+                <div class="bg-white/80 border border-zinc-200 rounded-2xl p-5 text-center hover:border-olimpus-gold/40 shadow-sm transition">
                     <div class="font-display text-4xl sm:text-5xl font-bold text-olimpus-gold flex items-center justify-center">
                         <span class="counter-value" data-target="100">0</span><span>+</span>
                     </div>
-                    <p class="text-sm font-semibold text-white mt-1">Equipamentos Premium</p>
-                    <p class="text-xs text-zinc-400 mt-0.5">Biomecânica de ponta</p>
+                    <p class="text-sm font-semibold text-zinc-900 mt-1">Equipamentos Premium</p>
+                    <p class="text-xs text-zinc-500 mt-0.5">Biomecânica de ponta</p>
                 </div>
 
-                <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-5 text-center hover:border-olimpus-gold/40 transition">
+                <div class="bg-white/80 border border-zinc-200 rounded-2xl p-5 text-center hover:border-olimpus-gold/40 shadow-sm transition">
                     <div class="font-display text-4xl sm:text-5xl font-bold text-olimpus-gold flex items-center justify-center">
                         <span class="counter-value" data-target="15">0</span><span>+</span>
                     </div>
-                    <p class="text-sm font-semibold text-white mt-1">Modalidades & Serviços</p>
-                    <p class="text-xs text-zinc-400 mt-0.5">Para todas as idades</p>
+                    <p class="text-sm font-semibold text-zinc-900 mt-1">Modalidades & Serviços</p>
+                    <p class="text-xs text-zinc-500 mt-0.5">Para todas as idades</p>
                 </div>
 
-                <div class="bg-white/[0.03] border border-white/5 rounded-2xl p-5 text-center hover:border-olimpus-gold/40 transition">
+                <div class="bg-white/80 border border-zinc-200 rounded-2xl p-5 text-center hover:border-olimpus-gold/40 shadow-sm transition">
                     <div class="font-display text-4xl sm:text-5xl font-bold text-olimpus-gold flex items-center justify-center">
                         <span class="counter-value" data-target="10">0</span><span>+</span>
                     </div>
-                    <p class="text-sm font-semibold text-white mt-1">Anos de Experiência</p>
-                    <p class="text-xs text-zinc-400 mt-0.5">Referência em Chapecó - SC</p>
+                    <p class="text-sm font-semibold text-zinc-900 mt-1">Anos de Experiência</p>
+                    <p class="text-xs text-zinc-500 mt-0.5">Referência em Chapecó - SC</p>
                 </div>
             </div>
         </div>
@@ -253,29 +253,29 @@
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-6 space-y-6">
                     <span class="text-olimpus-gold text-xs font-bold uppercase tracking-[0.2em] block">SOBRE A OLIMPUS GROUP</span>
-                    <h2 class="font-display text-3xl sm:text-5xl font-bold text-black uppercase leading-tight">
+                    <h2 class="font-display text-3xl sm:text-5xl font-bold text-zinc-900 uppercase leading-tight">
                         O MAIOR ECOSSISTEMA DE SAÚDE E PERFORMANCE DE <span class="text-olimpus-gold">CHAPECÓ</span>
                     </h2>
-                    <p class="text-zinc-300 leading-relaxed">
-                        Localizado no bairro Santa Maria, o <strong class="text-black">Olimpus Group Complexo Esportivo</strong> nasceu para quebrar o padrão das academias convencionais. Reunimos em um único endereço tudo o que você e sua família precisam para evoluir o corpo, a mente e a qualidade de vida.
+                    <p class="text-zinc-600 leading-relaxed">
+                        Localizado no bairro Santa Maria, o <strong class="text-zinc-900">Olimpus Group Complexo Esportivo</strong> nasceu para quebrar o padrão das academias convencionais. Reunimos em um único endereço tudo o que você e sua família precisam para evoluir o corpo, a mente e a qualidade de vida.
                     </p>
                     <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                        <div class="bg-olimpus-card border border-white/5 p-4 rounded-2xl flex items-start gap-3.5">
+                        <div class="bg-olimpus-card border border-zinc-200 p-4 rounded-2xl flex items-start gap-3.5 shadow-sm">
                             <div class="w-10 h-10 rounded-xl bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center shrink-0 mt-0.5">
                                 <i class="fa-solid fa-clock-rotate-left"></i>
                             </div>
                             <div>
-                                <h3 class="font-bold text-black text-sm">Acesso 24h na Semana</h3>
-                                <p class="text-xs text-zinc-400 mt-1">Liberdade total de segunda a sexta para treinar no seu ritmo.</p>
+                                <h3 class="font-bold text-zinc-900 text-sm">Acesso 24h na Semana</h3>
+                                <p class="text-xs text-zinc-500 mt-1">Liberdade total de segunda a sexta para treinar no seu ritmo.</p>
                             </div>
                         </div>
-                        <div class="bg-olimpus-card border border-white/5 p-4 rounded-2xl flex items-start gap-3.5">
+                        <div class="bg-olimpus-card border border-zinc-200 p-4 rounded-2xl flex items-start gap-3.5 shadow-sm">
                             <div class="w-10 h-10 rounded-xl bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center shrink-0 mt-0.5">
                                 <i class="fa-solid fa-users"></i>
                             </div>
                             <div>
-                                <h3 class="font-bold text-black text-sm">5 Convidados / Mês</h3>
-                                <p class="text-xs text-zinc-400 mt-1">Traga amigos e familiares para conhecerem a estrutura com você.</p>
+                                <h3 class="font-bold text-zinc-900 text-sm">5 Convidados / Mês</h3>
+                                <p class="text-xs text-zinc-500 mt-1">Traga amigos e familiares para conhecerem a estrutura com você.</p>
                             </div>
                         </div>
                     </div>
@@ -283,30 +283,30 @@
 
                 <div class="lg:col-span-6 grid grid-cols-2 gap-4">
                     <div class="space-y-4">
-                        <div class="rounded-2xl overflow-hidden border border-white/10 h-48 sm:h-60 relative group">
-                            <img src="imagens/academia.png" alt="Musculação Olimpus"  class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="rounded-2xl overflow-hidden border border-zinc-200 h-48 sm:h-60 relative group shadow-sm">
+                            <img src="imagens/academia.png" alt="Musculação Olimpus" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                                <span class="text-xs font-bold uppercase tracking-wider text-olimpus-gold">Musculação High-End</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Musculação High-End</span>
                             </div>
                         </div>
-                        <div class="rounded-2xl overflow-hidden border border-white/10 h-40 sm:h-48 relative group">
-                            <img src="imagens/pilates.png" alt="Studio Pilates Olimpus"  class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="rounded-2xl overflow-hidden border border-zinc-200 h-40 sm:h-48 relative group shadow-sm">
+                            <img src="imagens/pilates.png" alt="Studio Pilates Olimpus" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                                <span class="text-xs font-bold uppercase tracking-wider text-olimpus-gold">Studio de Pilates</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Studio de Pilates</span>
                             </div>
                         </div>
                     </div>
                     <div class="space-y-4 pt-6">
-                        <div class="rounded-2xl overflow-hidden border border-white/10 h-40 sm:h-48 relative group">
-                            <img src="imagens/cross.png" alt="Box CrossFit Olimpus"  class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="rounded-2xl overflow-hidden border border-zinc-200 h-40 sm:h-48 relative group shadow-sm">
+                            <img src="imagens/cross.png" alt="Box CrossFit Olimpus" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                                <span class="text-xs font-bold uppercase tracking-wider text-olimpus-gold">Box CrossFit Oficial</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Box CrossFit Oficial</span>
                             </div>
                         </div>
-                        <div class="rounded-2xl overflow-hidden border border-white/10 h-48 sm:h-60 relative group">
+                        <div class="rounded-2xl overflow-hidden border border-zinc-200 h-48 sm:h-60 relative group shadow-sm">
                             <img src="imagens/sala.png" alt="Complexo Olimpus" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                                <span class="text-xs font-bold uppercase tracking-wider text-olimpus-gold">Sala de Poses</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Sala de Poses</span>
                             </div>
                         </div>
                     </div>
@@ -316,33 +316,33 @@
     </section>
 
     <!-- 3. SEÇÃO CONHEÇA NOSSA ESTRUTURA & MODALIDADES (COM FILTRO EM JS) -->
-    <section id="modalidades" class="py-20 bg-olimpus-card border-y border-white/5 bg-grid-pattern">
+    <section id="modalidades" class="py-20 bg-olimpus-card border-y border-zinc-200 bg-grid-pattern">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-10">
                 <span class="text-olimpus-gold text-xs font-bold uppercase tracking-[0.2em]">ESTRUTURA MONUMENTAL</span>
-                <h2 class="font-display text-3xl sm:text-5xl font-bold text-black uppercase mt-2">
+                <h2 class="font-display text-3xl sm:text-5xl font-bold text-zinc-900 uppercase mt-2">
                     CONHEÇA NOSSA ESTRUTURA & <span class="text-olimpus-gold">MODALIDADES</span>
                 </h2>
-                <p class="text-zinc-400 text-sm sm:text-base mt-3">
+                <p class="text-zinc-600 text-sm sm:text-base mt-3">
                     Filtre abaixo para explorar cada espaço planejado para entregar a melhor experiência de treino em Chapecó.
                 </p>
             </div>
 
             <!-- Botões de Filtro de Modalidades -->
             <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12" id="modality-filters">
-                <button data-filter="todos" class="modality-tab active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-gold text-black shadow-gold transition">
+                <button data-filter="todos" class="modality-tab active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-gold text-white shadow-gold transition">
                     Todos
                 </button>
-                <button data-filter="musculacao" class="modality-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-surface text-zinc-300 hover:text-white border border-white/10 transition">
+                <button data-filter="musculacao" class="modality-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-surface text-zinc-700 hover:text-olimpus-gold border border-zinc-300 transition">
                     Musculação & Cardio
                 </button>
-                <button data-filter="crossfit" class="modality-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-surface text-zinc-300 hover:text-white border border-white/10 transition">
+                <button data-filter="crossfit" class="modality-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-surface text-zinc-700 hover:text-olimpus-gold border border-zinc-300 transition">
                     CrossFit
                 </button>
-                <button data-filter="pilates" class="modality-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-surface text-zinc-300 hover:text-white border border-white/10 transition">
+                <button data-filter="pilates" class="modality-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-surface text-zinc-700 hover:text-olimpus-gold border border-zinc-300 transition">
                     Pilates
                 </button>
-                <button data-filter="conveniencia" class="modality-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-surface text-zinc-300 hover:text-white border border-white/10 transition">
+                <button data-filter="conveniencia" class="modality-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-surface text-zinc-700 hover:text-olimpus-gold border border-zinc-300 transition">
                     Conveniência & Diferenciais
                 </button>
             </div>
@@ -350,101 +350,100 @@
             <!-- Grid de Cards de Modalidades -->
             <div id="modalities-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 relative">
                 <!-- Card 1: Musculação & Cardio -->
-                <div data-category="musculacao" class="modality-card filter-item bg-olimpus-bg border border-white/10 rounded-2xl p-6 hover:border-olimpus-gold/50 transition flex flex-col justify-between group">
+                <div data-category="musculacao" class="modality-card filter-item bg-olimpus-bg border border-zinc-200 rounded-2xl p-6 hover:border-olimpus-gold/50 shadow-sm transition flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-5">
-                            <div class="w-12 h-12 rounded-xl bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xl group-hover:bg-olimpus-gold group-hover:text-black transition">
+                            <div class="w-12 h-12 rounded-xl bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xl group-hover:bg-olimpus-gold group-hover:text-white transition">
                                 <i class="fa-solid fa-dumbbell"></i>
                             </div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/5 text-olimpus-gold">100+ Máquinas</span>
+                            <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-olimpus-gold/10 text-olimpus-gold">100+ Máquinas</span>
                         </div>
-                        <h3 class="font-display text-2xl font-bold text-white uppercase">Musculação & Cardio</h3>
-                        <p class="text-zinc-400 text-sm mt-2 leading-relaxed">
+                        <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase">Musculação & Cardio</h3>
+                        <p class="text-zinc-600 text-sm mt-2 leading-relaxed">
                             Amplo salão climatizado com equipamentos importados de biomecânica avançada, área de peso livre completa e esteiras de alta performance.
                         </p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-300">
+                    <div class="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between text-xs text-zinc-600">
                         <span><i class="fa-solid fa-mobile-screen text-olimpus-gold mr-1.5"></i> Treino no Olimpus App</span>
                         <a href="#planos" class="text-olimpus-gold font-bold hover:underline">Ver Planos →</a>
                     </div>
                 </div>
 
                 <!-- Card 2: CrossFit -->
-                <div data-category="crossfit" class="modality-card filter-item bg-olimpus-bg border border-white/10 rounded-2xl p-6 hover:border-olimpus-gold/50 transition flex flex-col justify-between group">
+                <div data-category="crossfit" class="modality-card filter-item bg-olimpus-bg border border-zinc-200 rounded-2xl p-6 hover:border-olimpus-gold/50 shadow-sm transition flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-5">
-                            <div class="w-12 h-12 rounded-xl bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xl group-hover:bg-olimpus-gold group-hover:text-black transition">
+                            <div class="w-12 h-12 rounded-xl bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xl group-hover:bg-olimpus-gold group-hover:text-white transition">
                                 <i class="fa-solid fa-fire-flame-curved"></i>
                             </div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/5 text-olimpus-gold">Alta Intensidade</span>
+                            <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-olimpus-gold/10 text-olimpus-gold">Alta Intensidade</span>
                         </div>
-                        <h3 class="font-display text-2xl font-bold text-white uppercase">Box de CrossFit</h3>
-                        <p class="text-zinc-400 text-sm mt-2 leading-relaxed">
+                        <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase">Box de CrossFit</h3>
+                        <p class="text-zinc-600 text-sm mt-2 leading-relaxed">
                             Box amplo e equipado com rigs olímpicos, barras, anilhas bumper, remo, air bikes e coaches certificados para superar todos os seus limites.
                         </p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-300">
+                    <div class="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between text-xs text-zinc-600">
                         <span><i class="fa-solid fa-users text-olimpus-gold mr-1.5"></i> WODs diários acompanhados</span>
                         <a href="#planos" class="text-olimpus-gold font-bold hover:underline">Ver Planos →</a>
                     </div>
                 </div>
 
                 <!-- Card 3: Studio de Pilates -->
-                <div data-category="pilates" class="modality-card filter-item bg-olimpus-bg border border-white/10 rounded-2xl p-6 hover:border-olimpus-gold/50 transition flex flex-col justify-between group">
+                <div data-category="pilates" class="modality-card filter-item bg-olimpus-bg border border-zinc-200 rounded-2xl p-6 hover:border-olimpus-gold/50 shadow-sm transition flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-5">
-                            <div class="w-12 h-12 rounded-xl bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xl group-hover:bg-olimpus-gold group-hover:text-black transition">
+                            <div class="w-12 h-12 rounded-xl bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xl group-hover:bg-olimpus-gold group-hover:text-white transition">
                                 <i class="fa-solid fa-spa"></i>
                             </div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/5 text-olimpus-gold">Postura & Core</span>
+                            <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-olimpus-gold/10 text-olimpus-gold">Postura & Core</span>
                         </div>
-                        <h3 class="font-display text-2xl font-bold text-white uppercase">Studio de Pilates</h3>
-                        <p class="text-zinc-400 text-sm mt-2 leading-relaxed">
+                        <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase">Studio de Pilates</h3>
+                        <p class="text-zinc-600 text-sm mt-2 leading-relaxed">
                             Ambiente exclusivo para fortalecimento do core, flexibilidade, prevenção de lesões e reabilitação com acompanhamento personalizado.
                         </p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-300">
+                    <div class="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between text-xs text-zinc-600">
                         <span><i class="fa-regular fa-calendar-check text-olimpus-gold mr-1.5"></i> Agendamento pelo App</span>
                         <a href="#planos" class="text-olimpus-gold font-bold hover:underline">Ver Planos →</a>
                     </div>
                 </div>
 
-
                 <!-- Card 5: Sala de Poses -->
-                <div data-category="conveniencia" class="modality-card filter-item bg-olimpus-bg border border-white/10 rounded-2xl p-6 hover:border-olimpus-gold/50 transition flex flex-col justify-between group">
+                <div data-category="conveniencia" class="modality-card filter-item bg-olimpus-bg border border-zinc-200 rounded-2xl p-6 hover:border-olimpus-gold/50 shadow-sm transition flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-5">
-                            <div class="w-12 h-12 rounded-xl bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xl group-hover:bg-olimpus-gold group-hover:text-black transition">
+                            <div class="w-12 h-12 rounded-xl bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xl group-hover:bg-olimpus-gold group-hover:text-white transition">
                                 <i class="fa-solid fa-camera-retro"></i>
                             </div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/5 text-olimpus-gold">Exclusivo Olimpus</span>
+                            <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-olimpus-gold/10 text-olimpus-gold">Exclusivo Olimpus</span>
                         </div>
-                        <h3 class="font-display text-2xl font-bold text-white uppercase">Sala de Poses</h3>
-                        <p class="text-zinc-400 text-sm mt-2 leading-relaxed">
+                        <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase">Sala de Poses</h3>
+                        <p class="text-zinc-600 text-sm mt-2 leading-relaxed">
                             Espaço com iluminação cênica projetada e espelhos panorâmicos para atletas e alunos acompanharem a evolução estética e registrarem seu shape.
                         </p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-300">
+                    <div class="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between text-xs text-zinc-600">
                         <span><i class="fa-solid fa-lightbulb text-olimpus-gold mr-1.5"></i> Iluminação estética pró</span>
                         <a href="#planos" class="text-olimpus-gold font-bold hover:underline">Liberado nos Planos →</a>
                     </div>
                 </div>
 
                 <!-- Card 6: Avaliação Física & Café e Bar -->
-                <div data-category="conveniencia" class="modality-card filter-item bg-olimpus-bg border border-white/10 rounded-2xl p-6 hover:border-olimpus-gold/50 transition flex flex-col justify-between group">
+                <div data-category="conveniencia" class="modality-card filter-item bg-olimpus-bg border border-zinc-200 rounded-2xl p-6 hover:border-olimpus-gold/50 shadow-sm transition flex flex-col justify-between group">
                     <div>
                         <div class="flex items-center justify-between mb-5">
-                            <div class="w-12 h-12 rounded-xl bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xl group-hover:bg-olimpus-gold group-hover:text-black transition">
+                            <div class="w-12 h-12 rounded-xl bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xl group-hover:bg-olimpus-gold group-hover:text-white transition">
                                 <i class="fa-solid fa-mug-hot"></i>
                             </div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/5 text-olimpus-gold">Saúde & Nutrição</span>
+                            <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-olimpus-gold/10 text-olimpus-gold">Saúde & Nutrição</span>
                         </div>
-                        <h3 class="font-display text-2xl font-bold text-white uppercase">Avaliação Física & Café/Bar</h3>
-                        <p class="text-zinc-400 text-sm mt-2 leading-relaxed">
+                        <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase">Avaliação Física & Café/Bar</h3>
+                        <p class="text-zinc-600 text-sm mt-2 leading-relaxed">
                             Sala de avaliação física para métricas de evolução corporal e Espaço Gourmet com Café & Bar para seu pré ou pós-treino com suplementação e lanches.
                         </p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-zinc-300">
+                    <div class="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between text-xs text-zinc-600">
                         <span><i class="fa-solid fa-heart-pulse text-olimpus-gold mr-1.5"></i> Acompanhamento real</span>
                         <a href="#comodidades" class="text-olimpus-gold font-bold hover:underline">Ver Comodidades →</a>
                     </div>
@@ -459,17 +458,17 @@
             <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
                 <div>
                     <span class="text-olimpus-gold text-xs font-bold uppercase tracking-[0.2em]">SEM TAXA DE ADESÃO</span>
-                    <h2 class="font-display text-3xl sm:text-5xl font-bold text-white uppercase mt-2">
+                    <h2 class="font-display text-3xl sm:text-5xl font-bold text-zinc-900 uppercase mt-2">
                         TRANSFORME SUA <span class="text-olimpus-gold">ROTINA FITNESS</span>
                     </h2>
-                    <p class="text-zinc-400 text-sm sm:text-base mt-2 max-w-2xl">
+                    <p class="text-zinc-600 text-sm sm:text-base mt-2 max-w-2xl">
                         Escolha o plano que melhor se adapta aos seus objetivos ou use nosso recomendador inteligente.
                     </p>
                 </div>
 
                 <!-- Botão Quiz Descubra seu Plano Ideal -->
-                <button onclick="openQuizModal()" class="self-start lg:self-auto px-5 py-3.5 rounded-2xl bg-gradient-to-r from-olimpus-surface to-olimpus-card border border-olimpus-gold/50 hover:border-olimpus-gold text-white font-semibold text-sm flex items-center gap-3 shadow-gold transition group">
-                    <span class="w-9 h-9 rounded-xl bg-olimpus-gold text-black flex items-center justify-center group-hover:scale-110 transition">
+                <button onclick="openQuizModal()" class="self-start lg:self-auto px-5 py-3.5 rounded-2xl bg-white border border-olimpus-gold/40 hover:border-olimpus-gold text-zinc-900 font-semibold text-sm flex items-center gap-3 shadow-gold transition group">
+                    <span class="w-9 h-9 rounded-xl bg-olimpus-gold text-white flex items-center justify-center group-hover:scale-110 transition">
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
                     </span>
                     <div class="text-left">
@@ -481,16 +480,16 @@
 
             <!-- Filtro de Planos -->
             <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-10" id="plan-filters">
-                <button data-plan-filter="todos" class="plan-tab active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-gold text-black shadow-gold transition">
+                <button data-plan-filter="todos" class="plan-tab active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-gold text-white shadow-gold transition">
                     Todos os Planos (6)
                 </button>
-                <button data-plan-filter="musculacao" class="plan-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-card text-zinc-300 hover:text-white border border-white/10 transition">
+                <button data-plan-filter="musculacao" class="plan-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-card text-zinc-700 hover:text-olimpus-gold border border-zinc-300 transition">
                     Musculação
                 </button>
-                <button data-plan-filter="crossfit-total" class="plan-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-card text-zinc-300 hover:text-white border border-white/10 transition">
+                <button data-plan-filter="crossfit-total" class="plan-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-card text-zinc-700 hover:text-olimpus-gold border border-zinc-300 transition">
                     CrossFit & Total
                 </button>
-                <button data-plan-filter="especiais" class="plan-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-card text-zinc-300 hover:text-white border border-white/10 transition">
+                <button data-plan-filter="especiais" class="plan-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-card text-zinc-700 hover:text-olimpus-gold border border-zinc-300 transition">
                     Especiais (Pilates / Estudante)
                 </button>
             </div>
@@ -499,28 +498,28 @@
             <div id="plans-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
                 
                 <!-- 1. PLANO OLIMPUS (Destaque / Mais Popular) -->
-                <div data-plan-category="musculacao" class="plan-card filter-item relative bg-gradient-to-b from-olimpus-surface to-olimpus-card border-2 border-olimpus-gold rounded-3xl p-7 flex flex-col justify-between shadow-gold">
-                    <div class="absolute -top-3.5 left-6 bg-olimpus-gold text-black text-xs font-extrabold uppercase px-3.5 py-1 rounded-full tracking-wider">
+                <div data-plan-category="musculacao" class="plan-card filter-item relative bg-gradient-to-b from-white to-olimpus-surface border-2 border-olimpus-gold rounded-3xl p-7 flex flex-col justify-between shadow-gold">
+                    <div class="absolute -top-3.5 left-6 bg-olimpus-gold text-white text-xs font-extrabold uppercase px-3.5 py-1 rounded-full tracking-wider">
                         ★ Mais Popular
                     </div>
                     <div>
                         <div class="flex items-center justify-between">
-                            <h3 class="font-display text-2xl font-bold text-white uppercase">PLANO OLIMPUS</h3>
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-400">Zero Adesão</span>
+                            <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase">PLANO OLIMPUS</h3>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-emerald-500/15 text-emerald-700">Zero Adesão</span>
                         </div>
-                        <p class="text-xs text-zinc-400 mt-1">Ideal para quem busca musculação completa todos os dias.</p>
+                        <p class="text-xs text-zinc-500 mt-1">Ideal para quem busca musculação completa todos os dias.</p>
 
-                        <div class="my-6 p-4 rounded-2xl bg-black/40 border border-white/5">
-                            <span class="text-xs text-zinc-400 line-through">De R$ 159,90 por</span>
+                        <div class="my-6 p-4 rounded-2xl bg-olimpus-surface border border-zinc-200">
+                            <span class="text-xs text-zinc-500 line-through">De R$ 159,90 por</span>
                             <div class="flex items-baseline gap-1 mt-0.5">
                                 <span class="text-sm font-bold text-olimpus-gold">R$</span>
-                                <span class="font-display text-5xl font-bold text-white">69,90</span>
-                                <span class="text-xs text-zinc-400 font-medium">/ no 1º mês</span>
+                                <span class="font-display text-5xl font-bold text-zinc-900">69,90</span>
+                                <span class="text-xs text-zinc-500 font-medium">/ no 1º mês</span>
                             </div>
-                            <p class="text-[11px] text-zinc-400 mt-1">Demais mensalidades: R$ 159,90/mês</p>
+                            <p class="text-[11px] text-zinc-500 mt-1">Demais mensalidades: R$ 159,90/mês</p>
                         </div>
 
-                        <ul class="space-y-3 text-sm text-zinc-200">
+                        <ul class="space-y-3 text-sm text-zinc-700">
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span>Acesso completo à <strong>Musculação</strong></span></li>
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span>Treino livre todos os dias</span></li>
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span>Treino atualizado a cada 45 dias</span></li>
@@ -530,31 +529,31 @@
                         </ul>
                     </div>
 
-                    <button onclick="selectPlanForWhatsApp('PLANO OLIMPUS (1º mês R$ 69,90)')" class="mt-8 w-full py-3.5 rounded-xl bg-olimpus-gold hover:bg-amber-400 text-black font-extrabold text-sm uppercase tracking-wider transition shadow-gold">
+                    <button onclick="selectPlanForWhatsApp('PLANO OLIMPUS (1º mês R$ 69,90)')" class="mt-8 w-full py-3.5 rounded-xl bg-olimpus-gold hover:bg-olimpus-goldLight text-white font-extrabold text-sm uppercase tracking-wider transition shadow-gold">
                         Quero Este Plano
                     </button>
                 </div>
 
                 <!-- 2. PLANO PLUS -->
-                <div data-plan-category="musculacao crossfit-total" class="plan-card filter-item relative bg-olimpus-card border border-white/10 hover:border-olimpus-gold/50 rounded-3xl p-7 flex flex-col justify-between transition">
+                <div data-plan-category="musculacao crossfit-total" class="plan-card filter-item relative bg-olimpus-card border border-zinc-200 hover:border-olimpus-gold/50 rounded-3xl p-7 flex flex-col justify-between shadow-sm transition">
                     <div>
                         <div class="flex items-center justify-between">
-                            <h3 class="font-display text-2xl font-bold text-white uppercase">PLANO PLUS</h3>
+                            <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase">PLANO PLUS</h3>
                             <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-olimpus-gold/15 text-olimpus-gold">Multimodalidades</span>
                         </div>
-                        <p class="text-xs text-zinc-400 mt-1">Musculação livre + experiências mensais de Pilates e CrossFit.</p>
+                        <p class="text-xs text-zinc-500 mt-1">Musculação livre + experiências mensais de Pilates e CrossFit.</p>
 
-                        <div class="my-6 p-4 rounded-2xl bg-black/40 border border-white/5">
-                            <span class="text-xs text-zinc-400 line-through">De R$ 199,90 por</span>
+                        <div class="my-6 p-4 rounded-2xl bg-olimpus-surface border border-zinc-200">
+                            <span class="text-xs text-zinc-500 line-through">De R$ 199,90 por</span>
                             <div class="flex items-baseline gap-1 mt-0.5">
                                 <span class="text-sm font-bold text-olimpus-gold">R$</span>
-                                <span class="font-display text-5xl font-bold text-white">99,90</span>
-                                <span class="text-xs text-zinc-400 font-medium">/ no 1º mês</span>
+                                <span class="font-display text-5xl font-bold text-zinc-900">99,90</span>
+                                <span class="text-xs text-zinc-500 font-medium">/ no 1º mês</span>
                             </div>
-                            <p class="text-[11px] text-zinc-400 mt-1">Demais mensalidades: R$ 199,90 • Sem taxa de adesão</p>
+                            <p class="text-[11px] text-zinc-500 mt-1">Demais mensalidades: R$ 199,90 • Sem taxa de adesão</p>
                         </div>
 
-                        <ul class="space-y-2.5 text-sm text-zinc-300">
+                        <ul class="space-y-2.5 text-sm text-zinc-700">
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span>Musculação com treino livre e personalizado</span></li>
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span><strong>CrossFit 1x por semana</strong> incluso</span></li>
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span><strong>Pilates 2x por mês</strong> incluso</span></li>
@@ -563,31 +562,31 @@
                         </ul>
                     </div>
 
-                    <button onclick="selectPlanForWhatsApp('PLANO PLUS (1º mês R$ 99,90)')" class="mt-8 w-full py-3.5 rounded-xl bg-white/10 hover:bg-olimpus-gold hover:text-black text-white font-bold text-sm uppercase tracking-wider transition">
+                    <button onclick="selectPlanForWhatsApp('PLANO PLUS (1º mês R$ 99,90)')" class="mt-8 w-full py-3.5 rounded-xl bg-zinc-200/80 hover:bg-olimpus-gold hover:text-white text-zinc-900 font-bold text-sm uppercase tracking-wider transition">
                         Quero Este Plano
                     </button>
                 </div>
 
                 <!-- 3. CROSSFIT + ACADEMIA -->
-                <div data-plan-category="crossfit-total" class="plan-card filter-item relative bg-olimpus-card border border-white/10 hover:border-olimpus-gold/50 rounded-3xl p-7 flex flex-col justify-between transition">
+                <div data-plan-category="crossfit-total" class="plan-card filter-item relative bg-olimpus-card border border-zinc-200 hover:border-olimpus-gold/50 rounded-3xl p-7 flex flex-col justify-between shadow-sm transition">
                     <div>
                         <div class="flex items-center justify-between">
-                            <h3 class="font-display text-2xl font-bold text-white uppercase">CROSSFIT + ACADEMIA</h3>
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-orange-500/15 text-orange-400">Performance</span>
+                            <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase">CROSSFIT + ACADEMIA</h3>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-orange-500/15 text-orange-700">Performance</span>
                         </div>
-                        <p class="text-xs text-zinc-400 mt-1">A combinação perfeita de força e condicionamento extremo.</p>
+                        <p class="text-xs text-zinc-500 mt-1">A combinação perfeita de força e condicionamento extremo.</p>
 
-                        <div class="my-6 p-4 rounded-2xl bg-black/40 border border-white/5">
-                            <span class="text-xs text-emerald-400 font-semibold">Sem taxa de adesão</span>
+                        <div class="my-6 p-4 rounded-2xl bg-olimpus-surface border border-zinc-200">
+                            <span class="text-xs text-emerald-700 font-semibold">Sem taxa de adesão</span>
                             <div class="flex items-baseline gap-1 mt-0.5">
                                 <span class="text-sm font-bold text-olimpus-gold">R$</span>
-                                <span class="font-display text-5xl font-bold text-white">339,90</span>
-                                <span class="text-xs text-zinc-400 font-medium">/ mês</span>
+                                <span class="font-display text-5xl font-bold text-zinc-900">339,90</span>
+                                <span class="text-xs text-zinc-500 font-medium">/ mês</span>
                             </div>
-                            <p class="text-[11px] text-zinc-400 mt-1">Acesso ilimitado às duas modalidades</p>
+                            <p class="text-[11px] text-zinc-500 mt-1">Acesso ilimitado às duas modalidades</p>
                         </div>
 
-                        <ul class="space-y-3 text-sm text-zinc-300">
+                        <ul class="space-y-3 text-sm text-zinc-700">
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span><strong>CrossFit todos os dias</strong></span></li>
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span><strong>Musculação todos os dias</strong></span></li>
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span>Acesso completo ao <strong>Olimpus APP</strong></span></li>
@@ -595,31 +594,31 @@
                         </ul>
                     </div>
 
-                    <button onclick="selectPlanForWhatsApp('PLANO CROSSFIT + ACADEMIA (R$ 339,90/mês)')" class="mt-8 w-full py-3.5 rounded-xl bg-white/10 hover:bg-olimpus-gold hover:text-black text-white font-bold text-sm uppercase tracking-wider transition">
+                    <button onclick="selectPlanForWhatsApp('PLANO CROSSFIT + ACADEMIA (R$ 339,90/mês)')" class="mt-8 w-full py-3.5 rounded-xl bg-zinc-200/80 hover:bg-olimpus-gold hover:text-white text-zinc-900 font-bold text-sm uppercase tracking-wider transition">
                         Quero Este Plano
                     </button>
                 </div>
 
                 <!-- 4. PLANO POWER -->
-                <div data-plan-category="crossfit-total" class="plan-card filter-item relative bg-olimpus-card border border-olimpus-gold/40 hover:border-olimpus-gold rounded-3xl p-7 flex flex-col justify-between transition">
+                <div data-plan-category="crossfit-total" class="plan-card filter-item relative bg-olimpus-card border border-olimpus-gold/40 hover:border-olimpus-gold rounded-3xl p-7 flex flex-col justify-between shadow-sm transition">
                     <div>
                         <div class="flex items-center justify-between">
-                            <h3 class="font-display text-2xl font-bold text-white uppercase">PLANO POWER</h3>
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-olimpus-gold text-black font-bold">VIP All-Inclusive</span>
+                            <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase">PLANO POWER</h3>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-olimpus-gold text-white font-bold">VIP All-Inclusive</span>
                         </div>
-                        <p class="text-xs text-zinc-400 mt-1">Acesso total às experiências do complexo esportivo.</p>
+                        <p class="text-xs text-zinc-500 mt-1">Acesso total às experiências do complexo esportivo.</p>
 
-                        <div class="my-6 p-4 rounded-2xl bg-black/40 border border-white/5">
-                            <span class="text-xs text-emerald-400 font-semibold">Sem taxa de adesão</span>
+                        <div class="my-6 p-4 rounded-2xl bg-olimpus-surface border border-zinc-200">
+                            <span class="text-xs text-emerald-700 font-semibold">Sem taxa de adesão</span>
                             <div class="flex items-baseline gap-1 mt-0.5">
                                 <span class="text-sm font-bold text-olimpus-gold">R$</span>
-                                <span class="font-display text-5xl font-bold text-white">399,90</span>
-                                <span class="text-xs text-zinc-400 font-medium">/ mês</span>
+                                <span class="font-display text-5xl font-bold text-zinc-900">399,90</span>
+                                <span class="text-xs text-zinc-500 font-medium">/ mês</span>
                             </div>
-                            <p class="text-[11px] text-zinc-400 mt-1">O passaporte mais completo da Olimpus</p>
+                            <p class="text-[11px] text-zinc-500 mt-1">O passaporte mais completo da Olimpus</p>
                         </div>
 
-                        <ul class="space-y-2.5 text-sm text-zinc-300">
+                        <ul class="space-y-2.5 text-sm text-zinc-700">
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span><strong>CrossFit todos os dias</strong> + <strong>Musculação</strong></span></li>
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span><strong>Pilates 4x por mês</strong> incluso</span></li>
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span>Sala de Poses + Avaliação Física</span></li>
@@ -627,31 +626,31 @@
                         </ul>
                     </div>
 
-                    <button onclick="selectPlanForWhatsApp('PLANO POWER (R$ 399,90/mês)')" class="mt-8 w-full py-3.5 rounded-xl bg-white/10 hover:bg-olimpus-gold hover:text-black text-white font-bold text-sm uppercase tracking-wider transition">
+                    <button onclick="selectPlanForWhatsApp('PLANO POWER (R$ 399,90/mês)')" class="mt-8 w-full py-3.5 rounded-xl bg-zinc-200/80 hover:bg-olimpus-gold hover:text-white text-zinc-900 font-bold text-sm uppercase tracking-wider transition">
                         Quero Este Plano
                     </button>
                 </div>
 
                 <!-- 5. PILATES -->
-                <div data-plan-category="especiais" class="plan-card filter-item relative bg-olimpus-card border border-white/10 hover:border-olimpus-gold/50 rounded-3xl p-7 flex flex-col justify-between transition">
+                <div data-plan-category="especiais" class="plan-card filter-item relative bg-olimpus-card border border-zinc-200 hover:border-olimpus-gold/50 rounded-3xl p-7 flex flex-col justify-between shadow-sm transition">
                     <div>
                         <div class="flex items-center justify-between">
-                            <h3 class="font-display text-2xl font-bold text-white uppercase">STUDIO PILATES</h3>
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-teal-500/15 text-teal-300">Bem-Estar</span>
+                            <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase">STUDIO PILATES</h3>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-teal-500/15 text-teal-700">Bem-Estar</span>
                         </div>
-                        <p class="text-xs text-zinc-400 mt-1">Foco em postura, fortalecimento e qualidade de movimento.</p>
+                        <p class="text-xs text-zinc-500 mt-1">Foco em postura, fortalecimento e qualidade de movimento.</p>
 
-                        <div class="my-6 p-4 rounded-2xl bg-black/40 border border-white/5">
-                            <span class="text-xs text-emerald-400 font-semibold">Zero matrícula e manutenção</span>
+                        <div class="my-6 p-4 rounded-2xl bg-olimpus-surface border border-zinc-200">
+                            <span class="text-xs text-emerald-700 font-semibold">Zero matrícula e manutenção</span>
                             <div class="flex items-baseline gap-1 mt-0.5">
                                 <span class="text-sm font-bold text-olimpus-gold">R$</span>
-                                <span class="font-display text-5xl font-bold text-white">249,90</span>
-                                <span class="text-xs text-zinc-400 font-medium">/ mês</span>
+                                <span class="font-display text-5xl font-bold text-zinc-900">249,90</span>
+                                <span class="text-xs text-zinc-500 font-medium">/ mês</span>
                             </div>
-                            <p class="text-[11px] text-zinc-400 mt-1">Turmas reduzidas e atenção dedicada</p>
+                            <p class="text-[11px] text-zinc-500 mt-1">Turmas reduzidas e atenção dedicada</p>
                         </div>
 
-                        <ul class="space-y-3 text-sm text-zinc-300">
+                        <ul class="space-y-3 text-sm text-zinc-700">
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span><strong>2 aulas por semana</strong> no Studio</span></li>
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span>Agendamento prático pelo aplicativo</span></li>
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span><strong>Zero taxa de matrícula</strong></span></li>
@@ -659,31 +658,31 @@
                         </ul>
                     </div>
 
-                    <button onclick="selectPlanForWhatsApp('PLANO PILATES (R$ 249,90/mês)')" class="mt-8 w-full py-3.5 rounded-xl bg-white/10 hover:bg-olimpus-gold hover:text-black text-white font-bold text-sm uppercase tracking-wider transition">
+                    <button onclick="selectPlanForWhatsApp('PLANO PILATES (R$ 249,90/mês)')" class="mt-8 w-full py-3.5 rounded-xl bg-zinc-200/80 hover:bg-olimpus-gold hover:text-white text-zinc-900 font-bold text-sm uppercase tracking-wider transition">
                         Quero Este Plano
                     </button>
                 </div>
 
                 <!-- 6. STUDENTS PASS -->
-                <div data-plan-category="especiais musculacao" class="plan-card filter-item relative bg-olimpus-card border border-white/10 hover:border-olimpus-gold/50 rounded-3xl p-7 flex flex-col justify-between transition">
+                <div data-plan-category="especiais musculacao" class="plan-card filter-item relative bg-olimpus-card border border-zinc-200 hover:border-olimpus-gold/50 rounded-3xl p-7 flex flex-col justify-between shadow-sm transition">
                     <div>
                         <div class="flex items-center justify-between">
-                            <h3 class="font-display text-2xl font-bold text-white uppercase">STUDENTS PASS</h3>
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-blue-500/15 text-blue-400">12 a 18 anos</span>
+                            <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase">STUDENTS PASS</h3>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-blue-500/15 text-blue-700">12 a 18 anos</span>
                         </div>
-                        <p class="text-xs text-zinc-400 mt-1">Plano exclusivo para jovens estudantes iniciarem no esporte.</p>
+                        <p class="text-xs text-zinc-500 mt-1">Plano exclusivo para jovens estudantes iniciarem no esporte.</p>
 
-                        <div class="my-6 p-4 rounded-2xl bg-black/40 border border-white/5">
+                        <div class="my-6 p-4 rounded-2xl bg-olimpus-surface border border-zinc-200">
                             <span class="text-xs text-olimpus-gold font-semibold">Condição Especial Estudante</span>
                             <div class="flex items-baseline gap-1 mt-0.5">
                                 <span class="text-sm font-bold text-olimpus-gold">R$</span>
-                                <span class="font-display text-5xl font-bold text-white">29,90</span>
-                                <span class="text-xs text-zinc-400 font-medium">/ na 1ª parcela</span>
+                                <span class="font-display text-5xl font-bold text-zinc-900">29,90</span>
+                                <span class="text-xs text-zinc-500 font-medium">/ na 1ª parcela</span>
                             </div>
-                            <p class="text-[11px] text-zinc-400 mt-1">Exclusivo para estudantes de 12 a 18 anos</p>
+                            <p class="text-[11px] text-zinc-500 mt-1">Exclusivo para estudantes de 12 a 18 anos</p>
                         </div>
 
-                        <ul class="space-y-3 text-sm text-zinc-300">
+                        <ul class="space-y-3 text-sm text-zinc-700">
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span>Seg a Sex das <strong>09h às 17h</strong></span></li>
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span>Sábados e Domingos com <strong>horário livre</strong></span></li>
                             <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-olimpus-gold mt-1"></i><span>Acesso ao <strong>Olimpus APP</strong></span></li>
@@ -691,7 +690,7 @@
                         </ul>
                     </div>
 
-                    <button onclick="selectPlanForWhatsApp('STUDENTS PASS (1ª parcela R$ 29,90 - 12 a 18 anos)')" class="mt-8 w-full py-3.5 rounded-xl bg-white/10 hover:bg-olimpus-gold hover:text-black text-white font-bold text-sm uppercase tracking-wider transition">
+                    <button onclick="selectPlanForWhatsApp('STUDENTS PASS (1ª parcela R$ 29,90 - 12 a 18 anos)')" class="mt-8 w-full py-3.5 rounded-xl bg-zinc-200/80 hover:bg-olimpus-gold hover:text-white text-zinc-900 font-bold text-sm uppercase tracking-wider transition">
                         Quero Este Plano
                     </button>
                 </div>
@@ -701,105 +700,105 @@
     </section>
 
     <!-- 5. SEÇÃO COMODIDADES DO COMPLEXO -->
-    <section id="comodidades" class="py-20 bg-olimpus-card border-t border-white/5">
+    <section id="comodidades" class="py-20 bg-olimpus-card border-t border-zinc-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14">
                 <span class="text-olimpus-gold text-xs font-bold uppercase tracking-[0.2em]">CONFORTO & ALTO PADRÃO</span>
-                <h2 class="font-display text-3xl sm:text-5xl font-bold text-white uppercase mt-2">
+                <h2 class="font-display text-3xl sm:text-5xl font-bold text-zinc-900 uppercase mt-2">
                     COMODIDADES DO <span class="text-olimpus-gold">COMPLEXO</span>
                 </h2>
-                <p class="text-zinc-400 text-sm sm:text-base mt-3">
+                <p class="text-zinc-600 text-sm sm:text-base mt-3">
                     Cada detalhe foi projetado para que você tenha praticidade antes, durante e depois do seu treino.
                 </p>
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
                 <!-- 1 -->
-                <div class="bg-olimpus-bg border border-white/5 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group transition">
+                <div class="bg-olimpus-bg border border-zinc-200 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group shadow-sm transition">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-olimpus-gold/10 text-olimpus-gold flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-solid fa-calendar-days"></i>
                     </div>
-                    <h3 class="font-bold text-white text-sm mt-4">Aberto 360 Dias</h3>
-                    <p class="text-xs text-zinc-400 mt-1">Treine inclusive aos domingos e feriados</p>
+                    <h3 class="font-bold text-zinc-900 text-sm mt-4">Aberto 360 Dias</h3>
+                    <p class="text-xs text-zinc-600 mt-1">Treine inclusive aos domingos e feriados</p>
                 </div>
                 <!-- 2 -->
-                <div class="bg-olimpus-bg border border-white/5 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group transition">
+                <div class="bg-olimpus-bg border border-zinc-200 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group shadow-sm transition">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-olimpus-gold/10 text-olimpus-gold flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-solid fa-snowflake"></i>
                     </div>
-                    <h3 class="font-bold text-white text-sm mt-4">Ambiente Climatizado</h3>
-                    <p class="text-xs text-zinc-400 mt-1">Temperatura ideal em qualquer estação</p>
+                    <h3 class="font-bold text-zinc-900 text-sm mt-4">Ambiente Climatizado</h3>
+                    <p class="text-xs text-zinc-600 mt-1">Temperatura ideal em qualquer estação</p>
                 </div>
                 <!-- 3 -->
-                <div class="bg-olimpus-bg border border-white/5 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group transition">
+                <div class="bg-olimpus-bg border border-zinc-200 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group shadow-sm transition">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-olimpus-gold/10 text-olimpus-gold flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-solid fa-vault"></i>
                     </div>
-                    <h3 class="font-bold text-white text-sm mt-4">Armários Seguros</h3>
-                    <p class="text-xs text-zinc-400 mt-1">Guarda-volumes práticos para seus pertences</p>
+                    <h3 class="font-bold text-zinc-900 text-sm mt-4">Armários Seguros</h3>
+                    <p class="text-xs text-zinc-600 mt-1">Guarda-volumes práticos para seus pertences</p>
                 </div>
                 <!-- 4 -->
-                <div class="bg-olimpus-bg border border-white/5 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group transition">
+                <div class="bg-olimpus-bg border border-zinc-200 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group shadow-sm transition">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-olimpus-gold/10 text-olimpus-gold flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-solid fa-square-parking"></i>
                     </div>
-                    <h3 class="font-bold text-white text-sm mt-4">Estacionamento</h3>
-                    <p class="text-xs text-zinc-400 mt-1">Comodidade e fácil acesso em Chapecó</p>
+                    <h3 class="font-bold text-zinc-900 text-sm mt-4">Estacionamento</h3>
+                    <p class="text-xs text-zinc-600 mt-1">Comodidade e fácil acesso em Chapecó</p>
                 </div>
                 <!-- 5 -->
-                <div class="bg-olimpus-bg border border-white/5 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group transition">
+                <div class="bg-olimpus-bg border border-zinc-200 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group shadow-sm transition">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-olimpus-gold/10 text-olimpus-gold flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-solid fa-shower"></i>
                     </div>
-                    <h3 class="font-bold text-white text-sm mt-4">Vestiários Completos</h3>
-                    <p class="text-xs text-zinc-400 mt-1">Duchas aquecidas e bancadas amplas</p>
+                    <h3 class="font-bold text-zinc-900 text-sm mt-4">Vestiários Completos</h3>
+                    <p class="text-xs text-zinc-600 mt-1">Duchas aquecidas e bancadas amplas</p>
                 </div>
                 <!-- 6 -->
-                <div class="bg-olimpus-bg border border-white/5 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group transition">
+                <div class="bg-olimpus-bg border border-zinc-200 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group shadow-sm transition">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-olimpus-gold/10 text-olimpus-gold flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-solid fa-utensils"></i>
                     </div>
-                    <h3 class="font-bold text-white text-sm mt-4">Espaço Gourmet</h3>
-                    <p class="text-xs text-zinc-400 mt-1">Café & Bar integrado para pré/pós-treino</p>
+                    <h3 class="font-bold text-zinc-900 text-sm mt-4">Espaço Gourmet</h3>
+                    <p class="text-xs text-zinc-600 mt-1">Café & Bar integrado para pré/pós-treino</p>
                 </div>
                 <!-- 7 -->
-                <div class="bg-olimpus-bg border border-white/5 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group transition">
+                <div class="bg-olimpus-bg border border-zinc-200 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group shadow-sm transition">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-olimpus-gold/10 text-olimpus-gold flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-solid fa-wifi"></i>
                     </div>
-                    <h3 class="font-bold text-white text-sm mt-4">Wi-Fi Grátis</h3>
-                    <p class="text-xs text-zinc-400 mt-1">Conexão rápida em todo o complexo</p>
+                    <h3 class="font-bold text-zinc-900 text-sm mt-4">Wi-Fi Grátis</h3>
+                    <p class="text-xs text-zinc-600 mt-1">Conexão rápida em todo o complexo</p>
                 </div>
                 <!-- 8 -->
-                <div class="bg-olimpus-bg border border-white/5 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group transition">
+                <div class="bg-olimpus-bg border border-zinc-200 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group shadow-sm transition">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-olimpus-gold/10 text-olimpus-gold flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-solid fa-mobile-screen-button"></i>
                     </div>
-                    <h3 class="font-bold text-white text-sm mt-4">Aplicativo Olimpus</h3>
-                    <p class="text-xs text-zinc-400 mt-1">Ficha de treino, evolução e check-in</p>
+                    <h3 class="font-bold text-zinc-900 text-sm mt-4">Aplicativo Olimpus</h3>
+                    <p class="text-xs text-zinc-600 mt-1">Ficha de treino, evolução e check-in</p>
                 </div>
                 <!-- 9 -->
-                <div class="bg-olimpus-bg border border-white/5 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group transition">
+                <div class="bg-olimpus-bg border border-zinc-200 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group shadow-sm transition">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-olimpus-gold/10 text-olimpus-gold flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-solid fa-person-rays"></i>
                     </div>
-                    <h3 class="font-bold text-white text-sm mt-4">Sala de Poses</h3>
-                    <p class="text-xs text-zinc-400 mt-1">Iluminação dedicada para fisiculturismo</p>
+                    <h3 class="font-bold text-zinc-900 text-sm mt-4">Sala de Poses</h3>
+                    <p class="text-xs text-zinc-600 mt-1">Iluminação dedicada para fisiculturismo</p>
                 </div>
                 <!-- 10 -->
-                <div class="bg-olimpus-bg border border-white/5 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group transition">
+                <div class="bg-olimpus-bg border border-zinc-200 hover:border-olimpus-gold/40 rounded-2xl p-5 text-center group shadow-sm transition">
                     <div class="w-12 h-12 mx-auto rounded-xl bg-olimpus-gold/10 text-olimpus-gold flex items-center justify-center text-xl group-hover:scale-110 transition">
                         <i class="fa-solid fa-weight-scale"></i>
                     </div>
-                    <h3 class="font-bold text-white text-sm mt-4">Avaliação Física</h3>
-                    <p class="text-xs text-zinc-400 mt-1">Diagnóstico preciso da sua composição</p>
+                    <h3 class="font-bold text-zinc-900 text-sm mt-4">Avaliação Física</h3>
+                    <p class="text-xs text-zinc-600 mt-1">Diagnóstico preciso da sua composição</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 6. SEÇÃO HORÁRIOS DE FUNCIONAMENTO + LOCALIZAÇÃO & CADASTRO PRÉVIO -->
-    <section id="horarios" class="py-20 bg-olimpus-bg border-t border-white/5">
+    <section id="horarios" class="py-20 bg-olimpus-bg border-t border-zinc-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-12 items-start">
                 
@@ -807,71 +806,71 @@
                 <div class="lg:col-span-5 space-y-8">
                     <div>
                         <span class="text-olimpus-gold text-xs font-bold uppercase tracking-[0.2em]">SEMPRE PRONTO PARA VOCÊ</span>
-                        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white uppercase mt-2">
+                        <h2 class="font-display text-3xl sm:text-4xl font-bold text-zinc-900 uppercase mt-2">
                             HORÁRIOS DE <span class="text-olimpus-gold">FUNCIONAMENTO</span>
                         </h2>
-                        <p class="text-zinc-400 text-sm mt-2">
+                        <p class="text-zinc-600 text-sm mt-2">
                             Funcionamos 360 dias no ano com horário estendido para nunca atrapalhar sua rotina.
                         </p>
                     </div>
 
                     <!-- Card de Horários -->
-                    <div class="bg-olimpus-card border border-white/10 rounded-3xl p-6 space-y-4">
-                        <div id="schedule-row-weekday" class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.02] border border-white/5">
+                    <div class="bg-olimpus-card border border-zinc-200 rounded-3xl p-6 space-y-4 shadow-sm">
+                        <div id="schedule-row-weekday" class="flex items-center justify-between p-3.5 rounded-2xl bg-olimpus-surface border border-zinc-200">
                             <div class="flex items-center gap-3">
                                 <i class="fa-regular fa-clock text-olimpus-gold text-lg"></i>
                                 <div>
-                                    <span class="font-bold text-white text-sm block">Segunda a Sexta</span>
-                                    <span class="text-[11px] text-emerald-400 font-medium">★ Acesso 24 Horas Seg-Sex</span>
+                                    <span class="font-bold text-zinc-900 text-sm block">Segunda a Sexta</span>
+                                    <span class="text-[11px] text-emerald-700 font-medium">★ Acesso 24 Horas Seg-Sex</span>
                                 </div>
                             </div>
                             <span class="font-display text-lg font-bold text-olimpus-gold">05:00 às 00:00</span>
                         </div>
 
-                        <div id="schedule-row-sat" class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.02] border border-white/5">
+                        <div id="schedule-row-sat" class="flex items-center justify-between p-3.5 rounded-2xl bg-olimpus-surface border border-zinc-200">
                             <div class="flex items-center gap-3">
                                 <i class="fa-regular fa-clock text-olimpus-gold text-lg"></i>
                                 <div>
-                                    <span class="font-bold text-white text-sm block">Sábados</span>
-                                    <span class="text-[11px] text-zinc-400">Treino livre e modalidades</span>
+                                    <span class="font-bold text-zinc-900 text-sm block">Sábados</span>
+                                    <span class="text-[11px] text-zinc-500">Treino livre e modalidades</span>
                                 </div>
                             </div>
-                            <span class="font-display text-lg font-bold text-white">08:00 às 18:00</span>
+                            <span class="font-display text-lg font-bold text-zinc-900">08:00 às 18:00</span>
                         </div>
 
-                        <div id="schedule-row-sun" class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.02] border border-white/5">
+                        <div id="schedule-row-sun" class="flex items-center justify-between p-3.5 rounded-2xl bg-olimpus-surface border border-zinc-200">
                             <div class="flex items-center gap-3">
                                 <i class="fa-regular fa-clock text-olimpus-gold text-lg"></i>
                                 <div>
-                                    <span class="font-bold text-white text-sm block">Domingos e Feriados</span>
-                                    <span class="text-[11px] text-zinc-400">Aberto 360 dias no ano</span>
+                                    <span class="font-bold text-zinc-900 text-sm block">Domingos e Feriados</span>
+                                    <span class="text-[11px] text-zinc-500">Aberto 360 dias no ano</span>
                                 </div>
                             </div>
-                            <span class="font-display text-lg font-bold text-white">09:00 às 13:00</span>
+                            <span class="font-display text-lg font-bold text-zinc-900">09:00 às 13:00</span>
                         </div>
                     </div>
 
                     <!-- Card de Endereço e Contatos Reais -->
-                    <div class="bg-olimpus-card border border-white/10 rounded-3xl p-6 space-y-4">
-                        <h3 class="font-display text-xl font-bold text-white uppercase flex items-center gap-2">
+                    <div class="bg-olimpus-card border border-zinc-200 rounded-3xl p-6 space-y-4 shadow-sm">
+                        <h3 class="font-display text-xl font-bold text-zinc-900 uppercase flex items-center gap-2">
                             <i class="fa-solid fa-map-location-dot text-olimpus-gold"></i>
                             <span>Localização & Contato Oficial</span>
                         </h3>
-                        <p class="text-sm text-zinc-300 leading-relaxed">
-                            <strong>Endereço:</strong> Rua Curitiba, 701 - Bairro Santa Maria<br>
+                        <p class="text-sm text-zinc-600 leading-relaxed">
+                            <strong class="text-zinc-900">Endereço:</strong> Rua Curitiba, 701 - Bairro Santa Maria<br>
                             Chapecó - SC, CEP 89812-353
                         </p>
                         <div class="grid sm:grid-cols-2 gap-3 pt-2">
-                            <a href="https://wa.me/5549984114896" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 transition text-xs font-bold">
+                            <a href="https://wa.me/5549984114896" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 hover:bg-emerald-500/20 transition text-xs font-bold">
                                 <i class="fa-brands fa-whatsapp text-lg"></i>
                                 <span>(49) 98411-4896</span>
                             </a>
-                            <a href="https://www.instagram.com/groupolimpus" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-3 rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 hover:bg-pink-500/20 transition text-xs font-bold">
+                            <a href="https://www.instagram.com/groupolimpus" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 p-3 rounded-xl bg-pink-500/10 border border-pink-500/30 text-pink-700 hover:bg-pink-500/20 transition text-xs font-bold">
                                 <i class="fa-brands fa-instagram text-lg"></i>
                                 <span>@groupolimpus</span>
                             </a>
                         </div>
-                        <a href="https://maps.google.com/?q=Rua+Curitiba,+701+-+Santa+Maria,+Chapeco+-+SC" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-200 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition">
+                        <a href="https://maps.google.com/?q=Rua+Curitiba,+701+-+Santa+Maria,+Chapeco+-+SC" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-olimpus-surface hover:bg-zinc-200/80 border border-zinc-200 text-zinc-800 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition">
                             <i class="fa-solid fa-diamond-turn-right text-olimpus-gold"></i>
                             <span>Traçar Rota no Google Maps</span>
                         </a>
@@ -880,31 +879,31 @@
 
                 <!-- Coluna Direita: Formulário Agende sua Aula Experimental / Cadastro Prévio -->
                 <div id="contato" class="lg:col-span-7">
-                    <div class="bg-gradient-to-b from-olimpus-surface to-olimpus-card border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                    <div class="bg-gradient-to-b from-white to-olimpus-surface border border-zinc-200 rounded-3xl p-6 sm:p-10 shadow-xl">
                         <span class="text-olimpus-gold text-xs font-bold uppercase tracking-[0.2em]">ATENDIMENTO RÁPIDO</span>
-                        <h3 class="font-display text-2xl sm:text-4xl font-bold text-white uppercase mt-1">
+                        <h3 class="font-display text-2xl sm:text-4xl font-bold text-zinc-900 uppercase mt-1">
                             AGENDE SUA AULA EXPERIMENTAL / <span class="text-olimpus-gold">CADASTRO PRÉVIO</span>
                         </h3>
-                        <p class="text-zinc-400 text-sm mt-2 mb-6">
+                        <p class="text-zinc-600 text-sm mt-2 mb-6">
                             Preencha seus dados abaixo. Nossa equipe em Chapecó receberá sua solicitação formatada diretamente no WhatsApp oficial para confirmar seu horário ou plano.
                         </p>
 
                         <form id="lead-form" class="space-y-5" novalidate>
                             <div class="grid sm:grid-cols-2 gap-5">
                                 <div>
-                                    <label for="lead-name" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Seu Nome Completo *</label>
-                                    <input type="text" id="lead-name" required placeholder="Ex: Gabriel Silva" class="w-full px-4 py-3.5 rounded-xl bg-olimpus-bg border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-olimpus-gold text-sm">
+                                    <label for="lead-name" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-2">Seu Nome Completo *</label>
+                                    <input type="text" id="lead-name" required placeholder="Ex: Gabriel Silva" class="w-full px-4 py-3.5 rounded-xl bg-white border border-zinc-300 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-olimpus-gold text-sm">
                                 </div>
                                 <div>
-                                    <label for="lead-phone" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Seu WhatsApp com DDD *</label>
-                                    <input type="tel" id="lead-phone" required placeholder="(49) 99999-9999" class="w-full px-4 py-3.5 rounded-xl bg-olimpus-bg border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-olimpus-gold text-sm">
+                                    <label for="lead-phone" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-2">Seu WhatsApp com DDD *</label>
+                                    <input type="tel" id="lead-phone" required placeholder="(49) 99999-9999" class="w-full px-4 py-3.5 rounded-xl bg-white border border-zinc-300 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-olimpus-gold text-sm">
                                 </div>
                             </div>
 
                             <div class="grid sm:grid-cols-2 gap-5">
                                 <div>
-                                    <label for="lead-modality" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Modalidade / Plano de Interesse *</label>
-                                    <select id="lead-modality" required class="w-full px-4 py-3.5 rounded-xl bg-olimpus-bg border border-white/10 text-white focus:outline-none focus:border-olimpus-gold text-sm">
+                                    <label for="lead-modality" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-2">Modalidade / Plano de Interesse *</label>
+                                    <select id="lead-modality" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-zinc-300 text-zinc-900 focus:outline-none focus:border-olimpus-gold text-sm">
                                         <option value="Plano Olimpus (1º mês R$ 69,90)">Plano Olimpus (1º mês R$ 69,90)</option>
                                         <option value="Plano Plus (1º mês R$ 99,90)">Plano Plus (1º mês R$ 99,90)</option>
                                         <option value="CrossFit + Academia (R$ 339,90)">CrossFit + Academia (R$ 339,90)</option>
@@ -916,8 +915,8 @@
                                 </div>
 
                                 <div>
-                                    <label for="lead-goal" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Qual seu Principal Objetivo? *</label>
-                                    <select id="lead-goal" required class="w-full px-4 py-3.5 rounded-xl bg-olimpus-bg border border-white/10 text-white focus:outline-none focus:border-olimpus-gold text-sm">
+                                    <label for="lead-goal" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-2">Qual seu Principal Objetivo? *</label>
+                                    <select id="lead-goal" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-zinc-300 text-zinc-900 focus:outline-none focus:border-olimpus-gold text-sm">
                                         <option value="Hipertrofia e Estética">Hipertrofia e Definição Muscular</option>
                                         <option value="Emagrecimento e Condicionamento">Emagrecimento e Condicionamento</option>
                                         <option value="Performance no CrossFit">Alta Performance no CrossFit</option>
@@ -927,29 +926,29 @@
                             </div>
 
                             <div>
-                                <label for="lead-shift" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Horário de Preferência para Treinar</label>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-2">Horário de Preferência para Treinar</label>
                                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                                     <label class="cursor-pointer">
                                         <input type="radio" name="lead-shift" value="Manhã (05h às 12h)" checked class="peer sr-only">
-                                        <div class="text-center py-2.5 px-3 rounded-xl bg-olimpus-bg border border-white/10 peer-checked:border-olimpus-gold peer-checked:bg-olimpus-gold/15 peer-checked:text-olimpus-gold text-xs font-semibold text-zinc-400 transition">
+                                        <div class="text-center py-2.5 px-3 rounded-xl bg-white border border-zinc-300 peer-checked:border-olimpus-gold peer-checked:bg-olimpus-gold/15 peer-checked:text-olimpus-gold text-xs font-semibold text-zinc-600 transition">
                                             Manhã
                                         </div>
                                     </label>
                                     <label class="cursor-pointer">
                                         <input type="radio" name="lead-shift" value="Tarde (12h às 18h)" class="peer sr-only">
-                                        <div class="text-center py-2.5 px-3 rounded-xl bg-olimpus-bg border border-white/10 peer-checked:border-olimpus-gold peer-checked:bg-olimpus-gold/15 peer-checked:text-olimpus-gold text-xs font-semibold text-zinc-400 transition">
+                                        <div class="text-center py-2.5 px-3 rounded-xl bg-white border border-zinc-300 peer-checked:border-olimpus-gold peer-checked:bg-olimpus-gold/15 peer-checked:text-olimpus-gold text-xs font-semibold text-zinc-600 transition">
                                             Tarde
                                         </div>
                                     </label>
                                     <label class="cursor-pointer">
                                         <input type="radio" name="lead-shift" value="Noite (18h às 00h)" class="peer sr-only">
-                                        <div class="text-center py-2.5 px-3 rounded-xl bg-olimpus-bg border border-white/10 peer-checked:border-olimpus-gold peer-checked:bg-olimpus-gold/15 peer-checked:text-olimpus-gold text-xs font-semibold text-zinc-400 transition">
+                                        <div class="text-center py-2.5 px-3 rounded-xl bg-white border border-zinc-300 peer-checked:border-olimpus-gold peer-checked:bg-olimpus-gold/15 peer-checked:text-olimpus-gold text-xs font-semibold text-zinc-600 transition">
                                             Noite
                                         </div>
                                     </label>
                                     <label class="cursor-pointer">
                                         <input type="radio" name="lead-shift" value="Madrugada / 24h" class="peer sr-only">
-                                        <div class="text-center py-2.5 px-3 rounded-xl bg-olimpus-bg border border-white/10 peer-checked:border-olimpus-gold peer-checked:bg-olimpus-gold/15 peer-checked:text-olimpus-gold text-xs font-semibold text-zinc-400 transition">
+                                        <div class="text-center py-2.5 px-3 rounded-xl bg-white border border-zinc-300 peer-checked:border-olimpus-gold peer-checked:bg-olimpus-gold/15 peer-checked:text-olimpus-gold text-xs font-semibold text-zinc-600 transition">
                                             24h / Flexível
                                         </div>
                                     </label>
@@ -959,7 +958,7 @@
                             <!-- Feedback de erro ou sucesso -->
                             <div id="form-feedback" class="hidden rounded-xl p-4 text-sm font-medium"></div>
 
-                            <button type="submit" class="btn-shine w-full py-4 rounded-xl bg-gradient-to-r from-olimpus-gold to-amber-500 text-black font-extrabold text-sm sm:text-base uppercase tracking-wider shadow-gold flex items-center justify-center gap-3 transition">
+                            <button type="submit" class="btn-shine w-full py-4 rounded-xl bg-gradient-to-r from-olimpus-gold to-amber-600 text-white font-extrabold text-sm sm:text-base uppercase tracking-wider shadow-gold flex items-center justify-center gap-3 transition">
                                 <i class="fa-brands fa-whatsapp text-xl"></i>
                                 <span>Enviar Cadastro para o WhatsApp da Olimpus</span>
                             </button>
@@ -972,16 +971,16 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-[#060608] border-t border-white/10 py-12 text-zinc-400 text-sm">
+    <footer class="bg-white border-t border-zinc-200 py-12 text-zinc-600 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/5">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-zinc-200">
                 <div class="flex items-center gap-3">
                     <div>
-                        <span class="font-display font-bold text-xl text-white">OLIMPUS <span class="text-olimpus-gold">GROUP</span></span>
+                        <span class="font-display font-bold text-xl text-zinc-900">OLIMPUS <span class="text-olimpus-gold">GROUP</span></span>
                         <p class="text-xs text-zinc-500">Complexo Esportivo • Chapecó - SC</p>
                     </div>
                 </div>
-                <div class="flex flex-wrap justify-center gap-6 text-xs font-semibold uppercase tracking-wider">
+                <div class="flex flex-wrap justify-center gap-6 text-xs font-semibold uppercase tracking-wider text-zinc-700">
                     <a href="#inicio" class="hover:text-olimpus-gold transition">Início</a>
                     <a href="#modalidades" class="hover:text-olimpus-gold transition">Modalidades</a>
                     <a href="#planos" class="hover:text-olimpus-gold transition">Planos</a>
@@ -1001,7 +1000,7 @@
        target="_blank" rel="noopener noreferrer"
        aria-label="Falar no WhatsApp"
        class="fixed bottom-6 right-6 z-40 group flex items-center gap-3">
-        <span class="hidden sm:block bg-olimpus-card border border-white/10 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none">
+        <span class="hidden sm:block bg-white border border-zinc-200 text-zinc-900 text-xs font-bold px-3.5 py-2 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none">
             Fale com a Recepção
         </span>
         <div class="w-14 h-14 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center text-3xl shadow-2xl transform group-hover:scale-110 transition">
@@ -1010,26 +1009,26 @@
     </a>
 
     <!-- MODAL 1: CONTRATAÇÃO RÁPIDA DE PLANO VIA WHATSAPP -->
-    <div id="plan-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+    <div id="plan-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
         <div class="bg-olimpus-card border border-olimpus-gold/40 rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-gold-lg">
-            <button onclick="closePlanModal()" aria-label="Fechar Modal" class="absolute top-5 right-5 w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white flex items-center justify-center">
+            <button onclick="closePlanModal()" aria-label="Fechar Modal" class="absolute top-5 right-5 w-9 h-9 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-600 hover:text-zinc-900 flex items-center justify-center">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
             <span class="text-xs font-bold uppercase tracking-widest text-olimpus-gold">Ativação Rápida via WhatsApp</span>
-            <h3 id="modal-plan-title" class="font-display text-2xl font-bold text-white uppercase mt-1">PLANO OLIMPUS</h3>
-            <p class="text-xs text-zinc-400 mt-1 mb-5">Informe seu nome para iniciarmos seu atendimento com o plano já selecionado:</p>
+            <h3 id="modal-plan-title" class="font-display text-2xl font-bold text-zinc-900 uppercase mt-1">PLANO OLIMPUS</h3>
+            <p class="text-xs text-zinc-600 mt-1 mb-5">Informe seu nome para iniciarmos seu atendimento com o plano já selecionado:</p>
 
             <form id="modal-plan-form" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold uppercase text-zinc-300 mb-1.5">Seu Nome *</label>
-                    <input type="text" id="modal-user-name" required placeholder="Digite seu nome" class="w-full px-4 py-3 rounded-xl bg-olimpus-bg border border-white/10 text-white text-sm focus:outline-none focus:border-olimpus-gold">
+                    <label class="block text-xs font-bold uppercase text-zinc-700 mb-1.5">Seu Nome *</label>
+                    <input type="text" id="modal-user-name" required placeholder="Digite seu nome" class="w-full px-4 py-3 rounded-xl bg-white border border-zinc-300 text-zinc-900 text-sm focus:outline-none focus:border-olimpus-gold">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase text-zinc-300 mb-1.5">Dúvida ou Observação (Opcional)</label>
-                    <input type="text" id="modal-user-note" placeholder="Ex: Quero começar segunda-feira" class="w-full px-4 py-3 rounded-xl bg-olimpus-bg border border-white/10 text-white text-sm focus:outline-none focus:border-olimpus-gold">
+                    <label class="block text-xs font-bold uppercase text-zinc-700 mb-1.5">Dúvida ou Observação (Opcional)</label>
+                    <input type="text" id="modal-user-note" placeholder="Ex: Quero começar segunda-feira" class="w-full px-4 py-3 rounded-xl bg-white border border-zinc-300 text-zinc-900 text-sm focus:outline-none focus:border-olimpus-gold">
                 </div>
-                <button type="submit" class="w-full py-3.5 rounded-xl bg-olimpus-gold hover:bg-amber-400 text-black font-extrabold text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-gold transition">
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-olimpus-gold hover:bg-olimpus-goldLight text-white font-extrabold text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-gold transition">
                     <i class="fa-brands fa-whatsapp text-lg"></i>
                     <span>Continuar no WhatsApp (49) 98411-4896</span>
                 </button>
@@ -1038,9 +1037,9 @@
     </div>
 
     <!-- MODAL 2: QUIZ INTERATIVO "DESCUBRA SEU PLANO IDEAL" -->
-    <div id="quiz-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+    <div id="quiz-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
         <div class="bg-olimpus-card border border-olimpus-gold/40 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-gold-lg">
-            <button onclick="closeQuizModal()" aria-label="Fechar Quiz" class="absolute top-5 right-5 w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white flex items-center justify-center">
+            <button onclick="closeQuizModal()" aria-label="Fechar Quiz" class="absolute top-5 right-5 w-9 h-9 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-600 hover:text-zinc-900 flex items-center justify-center">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
@@ -1048,20 +1047,20 @@
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
                 <span>Recomendador Olimpus</span>
             </div>
-            <h3 class="font-display text-2xl font-bold text-white uppercase mt-1">Descubra Seu Plano Ideal</h3>
+            <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase mt-1">Descubra Seu Plano Ideal</h3>
 
             <div id="quiz-content" class="mt-5 space-y-5">
                 <div>
-                    <label class="block text-xs font-bold uppercase text-zinc-300 mb-2">1. Qual o seu perfil atual?</label>
-                    <select id="quiz-age" class="w-full px-4 py-3 rounded-xl bg-olimpus-bg border border-white/10 text-white text-sm focus:border-olimpus-gold focus:outline-none">
+                    <label class="block text-xs font-bold uppercase text-zinc-700 mb-2">1. Qual o seu perfil atual?</label>
+                    <select id="quiz-age" class="w-full px-4 py-3 rounded-xl bg-white border border-zinc-300 text-zinc-900 text-sm focus:border-olimpus-gold focus:outline-none">
                         <option value="adulto">Adulto (Acima de 18 anos)</option>
                         <option value="estudante">Estudante de 12 a 18 anos</option>
                     </select>
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold uppercase text-zinc-300 mb-2">2. O que você mais deseja praticar?</label>
-                    <select id="quiz-focus" class="w-full px-4 py-3 rounded-xl bg-olimpus-bg border border-white/10 text-white text-sm focus:border-olimpus-gold focus:outline-none">
+                    <label class="block text-xs font-bold uppercase text-zinc-700 mb-2">2. O que você mais deseja praticar?</label>
+                    <select id="quiz-focus" class="w-full px-4 py-3 rounded-xl bg-white border border-zinc-300 text-zinc-900 text-sm focus:border-olimpus-gold focus:outline-none">
                         <option value="musculacao">Foco total em Musculação e Cardio</option>
                         <option value="misto">Musculação + experimentar CrossFit e Pilates</option>
                         <option value="crossfit">CrossFit todos os dias + Musculação</option>
@@ -1070,16 +1069,16 @@
                     </select>
                 </div>
 
-                <button onclick="calculateIdealPlan()" class="w-full py-3.5 rounded-xl bg-olimpus-gold text-black font-extrabold text-sm uppercase tracking-wider hover:bg-amber-400 transition">
+                <button onclick="calculateIdealPlan()" class="w-full py-3.5 rounded-xl bg-olimpus-gold text-white font-extrabold text-sm uppercase tracking-wider hover:bg-olimpus-goldLight transition">
                     Ver Meu Plano Recomendado
                 </button>
 
                 <!-- Resultado do Quiz -->
-                <div id="quiz-result" class="hidden p-5 rounded-2xl bg-olimpus-bg border border-olimpus-gold/50 space-y-3">
+                <div id="quiz-result" class="hidden p-5 rounded-2xl bg-olimpus-surface border border-olimpus-gold/50 space-y-3">
                     <span class="text-[11px] uppercase tracking-widest text-olimpus-gold font-bold">Plano Perfeito Para Você:</span>
-                    <h4 id="quiz-result-title" class="font-display text-2xl font-bold text-white"></h4>
-                    <p id="quiz-result-desc" class="text-xs text-zinc-300 leading-relaxed"></p>
-                    <button id="quiz-result-cta" class="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
+                    <h4 id="quiz-result-title" class="font-display text-2xl font-bold text-zinc-900"></h4>
+                    <p id="quiz-result-desc" class="text-xs text-zinc-600 leading-relaxed"></p>
+                    <button id="quiz-result-cta" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
                         <i class="fa-brands fa-whatsapp text-base"></i>
                         <span>Garantir Este Plano no WhatsApp</span>
                     </button>

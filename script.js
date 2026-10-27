@@ -45,12 +45,12 @@ function updateGymLiveStatus() {
     if (info) info.textContent = statusScheduleText;
 
     if (isOpen) {
-        badge.className = "inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30";
-        dot.className = "w-2 h-2 rounded-full bg-emerald-400 animate-ping";
+        badge.className = "inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full font-bold bg-emerald-500/15 text-emerald-700 border border-emerald-500/30";
+        dot.className = "w-2 h-2 rounded-full bg-emerald-600 animate-ping";
         text.textContent = "ABERTO AGORA";
     } else {
-        badge.className = "inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full font-bold bg-amber-500/15 text-amber-400 border border-amber-500/30";
-        dot.className = "w-2 h-2 rounded-full bg-amber-400";
+        badge.className = "inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full font-bold bg-amber-500/15 text-amber-700 border border-amber-500/30";
+        dot.className = "w-2 h-2 rounded-full bg-amber-600";
         text.textContent = "FECHADO AGORA";
     }
 }
@@ -59,10 +59,10 @@ function updateGymLiveStatus() {
 const header = document.getElementById('main-header');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-        header.classList.add('glass-header', 'py-3', 'shadow-2xl');
+        header.classList.add('glass-header', 'py-3', 'shadow-md');
         header.classList.remove('py-4');
     } else {
-        header.classList.remove('glass-header', 'py-3', 'shadow-2xl');
+        header.classList.remove('glass-header', 'py-3', 'shadow-md');
         header.classList.add('py-4');
     }
 });
@@ -117,7 +117,7 @@ function initCounters() {
     counters.forEach(counter => observer.observe(counter));
 }
 
-// 4. FILTRO INTERATIVO DE MODALIDADES
+// 4. FILTRO INTERATIVO DE MODALIDADES (TEMA CLARO)
 const modalityTabs = document.querySelectorAll('.modality-tab');
 const modalityCards = document.querySelectorAll('.modality-card');
 
@@ -126,9 +126,9 @@ modalityTabs.forEach(tab => {
         const filter = tab.getAttribute('data-filter');
 
         modalityTabs.forEach(t => {
-            t.className = "modality-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-surface text-zinc-300 hover:text-white border border-white/10 transition";
+            t.className = "modality-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-surface text-zinc-700 hover:text-olimpus-gold border border-zinc-300 transition";
         });
-        tab.className = "modality-tab active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-gold text-black shadow-gold transition";
+        tab.className = "modality-tab active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-gold text-white shadow-gold transition";
 
         modalityCards.forEach(card => {
             const category = card.getAttribute('data-category');
@@ -141,7 +141,7 @@ modalityTabs.forEach(tab => {
     });
 });
 
-// 5. FILTRO INTERATIVO DE PLANOS
+// 5. FILTRO INTERATIVO DE PLANOS (TEMA CLARO)
 const planTabs = document.querySelectorAll('.plan-tab');
 const planCards = document.querySelectorAll('.plan-card');
 
@@ -150,9 +150,9 @@ planTabs.forEach(tab => {
         const filter = tab.getAttribute('data-plan-filter');
 
         planTabs.forEach(t => {
-            t.className = "plan-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-card text-zinc-300 hover:text-white border border-white/10 transition";
+            t.className = "plan-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-card text-zinc-700 hover:text-olimpus-gold border border-zinc-300 transition";
         });
-        tab.className = "plan-tab active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-gold text-black shadow-gold transition";
+        tab.className = "plan-tab active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-olimpus-gold text-white shadow-gold transition";
 
         planCards.forEach(card => {
             const categories = card.getAttribute('data-plan-category');
@@ -234,7 +234,7 @@ function calculateIdealPlan() {
         desc = "Performance máxima com acesso todos os dias ao Box de CrossFit e à Musculação completa.";
     } else if (focus === 'tudo') {
         title = "PLANO POWER VIP (R$ 399,90/mês)";
-        desc = "Experiência completa: CrossFit e Musculação todos os dias + Pilates 4x/mês + Quadras de Beach Tennis 2x/mês + Avaliação Física.";
+        desc = "Experiência completa: CrossFit e Musculação todos os dias + Pilates 4x/mês + Sala de Poses + Avaliação Física.";
     } else {
         title = "STUDIO PILATES (R$ 249,90/mês)";
         desc = "2 aulas por semana com agendamento via App, zero taxa de matrícula e zero manutenção anual.";
@@ -271,12 +271,12 @@ leadForm.addEventListener('submit', (e) => {
     const shift = document.querySelector('input[name="lead-shift"]:checked').value;
 
     if (name.length < 3 || phone.length < 14) {
-        formFeedback.className = "rounded-xl p-4 text-sm font-medium bg-red-500/15 border border-red-500/30 text-red-300 block";
+        formFeedback.className = "rounded-xl p-4 text-sm font-medium bg-red-500/15 border border-red-500/30 text-red-700 block";
         formFeedback.innerHTML = `<i class="fa-solid fa-triangle-exclamation mr-2"></i>Por favor, preencha seu nome completo e um WhatsApp válido com DDD.`;
         return;
     }
 
-    formFeedback.className = "rounded-xl p-4 text-sm font-medium bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 block";
+    formFeedback.className = "rounded-xl p-4 text-sm font-medium bg-emerald-500/15 border border-emerald-500/30 text-emerald-700 block";
     formFeedback.innerHTML = `<i class="fa-solid fa-circle-check mr-2"></i>Cadastro validado! Redirecionando para o WhatsApp oficial da Olimpus Group...`;
 
     const text = `Olá, Olimpus Group! 🏋️‍♂️\n\nFiz meu cadastro prévio pelo site:\n👤 *Nome:* ${name}\n📱 *WhatsApp:* ${phone}\n🎯 *Interesse:* ${modality}\n🔥 *Objetivo:* ${goal}\n⏰ *Turno preferido:* ${shift}\n\nGostaria de confirmar meu atendimento!`;
