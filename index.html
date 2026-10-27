@@ -108,9 +108,20 @@
 
     <!-- 1. HERO SECTION -->
     <section id="inicio" class="relative hero-bg min-h-[88vh] flex items-center py-16 lg:py-24 overflow-hidden border-b border-zinc-200">
+        
+        <!-- VÍDEO DE FUNDO SUBSTITUINDO A IMAGEM ESTÁTICA -->
+        <div class="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden">
+            <video id="hero-video" autoplay loop muted playsinline poster="imagens/academia.png" class="w-full h-full object-cover object-center scale-105">
+                <source src="imagens/video-hero.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos em HTML5.
+            </video>
+            <!-- Overlay claro para manter o contraste dos textos no Tema Claro -->
+            <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/65 backdrop-blur-[2px]"></div>
+        </div>
+
         <!-- Decorative Glows -->
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-olimpus-gold/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-olimpus-gold/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+        <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none z-0"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
@@ -133,7 +144,7 @@
                     <!-- Action Buttons -->
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
                         <a href="#planos" class="btn-shine bg-gradient-to-r from-olimpus-gold to-amber-600 text-white font-extrabold text-base px-8 py-4 rounded-xl shadow-gold-lg flex items-center justify-center gap-3 transform hover:-translate-y-0.5 transition">
-                            <span>VER PLANOS A PARTIR DE R$ 69,90</span>
+                            <span>CONHEÇA NOSSOS PLANOS</span>
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
                         <a href="#contato" class="bg-white hover:bg-zinc-100 border border-zinc-300 text-zinc-900 font-semibold text-base px-7 py-4 rounded-xl flex items-center justify-center gap-2.5 shadow-sm transition">
@@ -180,6 +191,8 @@
                             </div>
                         </div>
 
+                        
+
                         <ul class="space-y-3 text-sm text-zinc-700 mb-6">
                             <li class="flex items-center gap-3">
                                 <span class="w-5 h-5 rounded-full bg-olimpus-gold/15 text-olimpus-gold flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></span>
@@ -199,12 +212,12 @@
                             </li>
                         </ul>
 
-                        <button onclick="selectPlanForWhatsApp('Plano Olimpus (Promo 1º mês R$ 69,90)')" class="w-full py-4 rounded-xl bg-olimpus-gold hover:bg-olimpus-goldLight text-white font-extrabold text-sm uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-gold">
-                            <i class="fa-brands fa-whatsapp text-lg"></i>
-                            <span>Garantir Meu 1º Mês por R$ 69,90</span>
-                        </button>
+                        <a href="https://vendas.online.sistemapacto.com.br/checkout?un=1&k=64cd3628f6921f9e13c26614c9874d37&pl=73" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl bg-olimpus-gold hover:bg-olimpus-goldLight text-white font-extrabold text-sm uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-gold">
+                             <i class="fa-solid fa-bolt text-lg"></i>
+                             <span>Garantir Meu Plano</span>
+                        </a>
                         <p class="text-[11px] text-center text-zinc-500 mt-3">
-                            Sem taxa de adesão • Ativação imediata pelo WhatsApp
+                            Sem taxa de adesão • Matrícula online imediata
                         </p>
                     </div>
                 </div>
@@ -626,9 +639,9 @@
                         </ul>
                     </div>
 
-                    <button onclick="selectPlanForWhatsApp('PLANO POWER (R$ 399,90/mês)')" class="mt-8 w-full py-3.5 rounded-xl bg-zinc-200/80 hover:bg-olimpus-gold hover:text-white text-zinc-900 font-bold text-sm uppercase tracking-wider transition">
-                        Quero Este Plano
-                    </button>
+                   <a href="https://vendas.online.sistemapacto.com.br/checkout?un=1&k=64cd3628f6921f9e13c26614c9874d37&pl=78" target="_blank" rel="noopener noreferrer" class="mt-8 block text-center w-full py-3.5 rounded-xl bg-olimpus-gold hover:bg-olimpus-goldLight text-white font-extrabold text-sm uppercase tracking-wider transition shadow-gold">
+    Quero Este Plano
+</a>
                 </div>
 
                 <!-- 5. PILATES -->
@@ -904,7 +917,7 @@
                                 <div>
                                     <label for="lead-modality" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-2">Modalidade / Plano de Interesse *</label>
                                     <select id="lead-modality" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-zinc-300 text-zinc-900 focus:outline-none focus:border-olimpus-gold text-sm">
-                                        <option value="Plano Olimpus (1º mês R$ 69,90)">Plano Olimpus (1º mês R$ 69,90)</option>
+                                        <option value="Plano Olimpus ">Plano Olimpus </option>
                                         <option value="Plano Plus (1º mês R$ 99,90)">Plano Plus (1º mês R$ 99,90)</option>
                                         <option value="CrossFit + Academia (R$ 339,90)">CrossFit + Academia (R$ 339,90)</option>
                                         <option value="Plano Power (R$ 399,90)">Plano Power VIP (R$ 399,90)</option>

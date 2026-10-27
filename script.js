@@ -299,3 +299,17 @@ window.addEventListener('DOMContentLoaded', () => {
     setInterval(updateGymLiveStatus, 60000);
     initCounters();
 });
+
+const heroVideo = document.getElementById('hero-video');
+
+if (heroVideo) {
+    heroVideo.muted = true;
+
+    // Reinicia o vídeo antes do ecrã preto final (aos 21.2 segundos)
+    heroVideo.addEventListener('timeupdate', () => {
+        if (heroVideo.currentTime >= 21.2) {
+            heroVideo.currentTime = 0;
+            heroVideo.play();
+        }
+    });
+}
