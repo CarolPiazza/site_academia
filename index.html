@@ -111,12 +111,12 @@
         
         <!-- VÍDEO DE FUNDO SUBSTITUINDO A IMAGEM ESTÁTICA -->
         <div class="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-hidden">
-            <video id="hero-video" autoplay loop muted playsinline poster="imagens/academia.png" class="w-full h-full object-cover object-center scale-105">
+            <video id="hero-video" autoplay loop muted playsinline poster="imagens/academia.png" class="w-full h-full object-cover object-center">
                 <source src="imagens/video-hero.mp4" type="video/mp4">
                 Seu navegador não suporta vídeos em HTML5.
             </video>
-            <!-- Overlay claro para manter o contraste dos textos no Tema Claro -->
-            <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/65 backdrop-blur-[2px]"></div>
+            <!-- Overlay suave apenas atrás do texto à esquerda (sem blur) -->
+            <div class="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent"></div>
         </div>
 
         <!-- Decorative Glows -->
@@ -1097,6 +1097,53 @@
                     </button>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE BOAS-VINDAS: BLACK NOVEMBRO -->
+    <div id="black-november-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+        <div class="bg-olimpus-card border-2 border-olimpus-gold rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-gold-lg text-center overflow-hidden">
+            
+            <!-- Botão Fechar -->
+            <button onclick="closeBlackNovemberModal()" aria-label="Fechar Modal" class="absolute top-5 right-5 w-9 h-9 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-600 hover:text-zinc-900 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Selo / Destaque -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-olimpus-gold text-white font-extrabold text-xs uppercase tracking-wider mb-4">
+                <i class="fa-solid fa-fire"></i> Black Novembro Olimpus
+            </div>
+
+            <!-- Título -->
+            <h3 class="font-display text-3xl sm:text-4xl font-bold text-zinc-900 uppercase tracking-tight">
+                O MAIOR DESCONTO DO ANO <span class="text-olimpus-gold">CHEGOU!</span>
+            </h3>
+
+            <!-- Descrição -->
+            <p class="text-zinc-600 text-sm sm:text-base mt-3 leading-relaxed">
+                Garanta sua vaga com condições exclusivas e treine no complexo mais completo de Chapecó com tarifas imperdíveis.
+            </p>
+
+            <!-- Box de Destaque da Oferta -->
+            <div class="my-6 p-4 rounded-2xl bg-olimpus-surface border border-zinc-200">
+                <span class="text-xs uppercase tracking-widest text-zinc-500 block font-bold">Plano Olimpus Promocional</span>
+                <div class="flex items-center justify-center gap-2 mt-1">
+            
+                </div>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="space-y-3">
+                <a href="#planos" onclick="closeBlackNovemberModal()" class="btn-shine w-full py-4 rounded-xl bg-gradient-to-r from-olimpus-gold to-amber-600 text-white font-extrabold text-sm uppercase tracking-wider shadow-gold flex items-center justify-center gap-2 transition">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Contratar Agora</span>
+                </a>
+                
+                <button onclick="closeBlackNovemberModal()" class="text-xs text-zinc-500 hover:text-zinc-800 font-semibold uppercase tracking-wider transition underline">
+                    Continuar navegando no site
+                </button>
+            </div>
+
         </div>
     </div>
 

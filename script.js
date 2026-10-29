@@ -298,6 +298,13 @@ window.addEventListener('DOMContentLoaded', () => {
     updateGymLiveStatus();
     setInterval(updateGymLiveStatus, 60000);
     initCounters();
+
+    // EXIBIR O MODAL DA BLACK NOVEMBRO AO ABRIR O SITE
+    // Se quiser que abra sempre que recarregar, basta chamar direto: openBlackNovemberModal();
+    if (!sessionStorage.getItem('blackNovModalShown')) {
+        // Abre o modal após 1 segundo (1000ms) para dar tempo da página carregar suavemente
+        setTimeout(openBlackNovemberModal, 1000);
+    }
 });
 
 const heroVideo = document.getElementById('hero-video');
@@ -313,3 +320,28 @@ if (heroVideo) {
         }
     });
 }
+
+// 9. MODAL AUTOMÁTICO DE BLACK NOVEMBRO AO ABRIR O SITE
+const blackNovModal = document.getElementById('black-november-modal');
+
+function openBlackNovemberModal() {
+    if (blackNovModal) {
+        blackNovModal.classList.remove('hidden');
+        blackNovModal.classList.add('flex');
+    }
+}
+
+function closeBlackNovemberModal() {
+    if (blackNovModal) {
+        blackNovModal.classList.add('hidden');
+        blackNovModal.classList.remove('flex');
+        // Opcional: Salvar no navegador para o modal não abrir toda vez que o usuário trocar de página na mesma sessão
+    }
+}
+
+// Fechar modais ao clicar fora
+window.addEventListener('click', (e) => {
+    if (e.target === planModal) closePlanModal();
+    if (e.target === quizModal) closeQuizModal();
+    if (e.target === blackNovModal) closeBlackNovemberModal(); // Adicionado aqui
+});
