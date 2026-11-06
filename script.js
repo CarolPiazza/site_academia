@@ -229,8 +229,7 @@ const PACTO_PLANS_DATA = {
             "APP",
             "Sem taxa de adesão e cancelamento"
         ],
-        // Confirme se o código "pl=" do Plano Flex no Sistema Pacto é 74
-        url: "https://vendas.online.sistemapacto.com.br/checkout?un=1&k=64cd3628f6921f9e13c26614c9874d37&pl=74"
+        url: "https://vendas.online.sistemapacto.com.br/checkout?un=1&k=64cd3628f6921f9e13c26614c9874d37&pl=71"
     },
     plus: {
         name: "PLANO PLUS",
