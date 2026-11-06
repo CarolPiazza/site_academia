@@ -202,56 +202,163 @@ modalPlanForm.addEventListener('submit', (e) => {
     closePlanModal();
 });
 
-// 7. QUIZ INTERATIVO "DESCUBRA SEU PLANO IDEAL"
+// 7. QUIZ INTERATIVO "DESCUBRA SEU PLANO IDEAL" (DIRECIONADO PARA A PACTO)
+const PACTO_PLANS_DATA = {
+    olimpus: {
+        name: "PLANO OLIMPUS",
+        price: "169,90",
+        highlight: "",
+        benefits: [
+            "Acesso à musculação",
+            "Treino livre todos os dias",
+            "Treino atualizado mensalmente",
+            "APP",
+            "Sala de poses",
+            "5 Convidados/mês"
+        ],
+        url: "https://vendas.online.sistemapacto.com.br/checkout?un=1&k=64cd3628f6921f9e13c26614c9874d37&pl=73"
+    },
+    flex: {
+        name: "PLANO FLEX",
+        price: "199,90",
+        highlight: "",
+        benefits: [
+            "Acesso à musculação",
+            "Treino livre todos os dias",
+            "Sala de poses",
+            "APP",
+            "Sem taxa de adesão e cancelamento"
+        ],
+        // Confirme se o código "pl=" do Plano Flex no Sistema Pacto é 74
+        url: "https://vendas.online.sistemapacto.com.br/checkout?un=1&k=64cd3628f6921f9e13c26614c9874d37&pl=74"
+    },
+    plus: {
+        name: "PLANO PLUS",
+        price: "219,90",
+        highlight: "O MAIS VENDIDO",
+        benefits: [
+            "Musculação",
+            "Pilates 2x/mês",
+            "Avaliação Física",
+            "Crossfit 1x/semana",
+            "Sala de poses",
+            "Treino personalizado",
+            "APP",
+            "5 Convidados/mês"
+        ],
+        url: "https://vendas.online.sistemapacto.com.br/checkout?un=1&k=64cd3628f6921f9e13c26614c9874d37&pl=72"
+    },
+    crossfit: {
+        name: "CROSSFIT LIVRE",
+        price: "319,90",
+        highlight: "",
+        benefits: [
+            "Crossfit todos os dias (seg. a dom.)",
+            "Wifi",
+            "Estacionamento",
+            "APP",
+            "Zero manutenção",
+            "5 Convidados/mês"
+        ],
+        url: "https://vendas.online.sistemapacto.com.br/checkout?un=1&k=64cd3628f6921f9e13c26614c9874d37&pl=76"
+    },
+    power: {
+        name: "PLANO POWER",
+        price: "399,90",
+        highlight: "O MAIS VANTAJOSO",
+        benefits: [
+            "Crossfit e Musculação todos os dias",
+            "Treino personalizado",
+            "APP",
+            "Sala de poses",
+            "Avaliação física",
+            "Pilates 4x/mês",
+            "5 Convidados/mês"
+        ],
+        url: "https://vendas.online.sistemapacto.com.br/checkout?un=1&k=64cd3628f6921f9e13c26614c9874d37&pl=78"
+    },
+    pilates: {
+        name: "PILATES",
+        price: "249,90",
+        highlight: "",
+        benefits: [
+            "2 aulas/semana",
+            "Agendamento via APP",
+            "Zero Taxa de Matrícula e Manutenção",
+            "WIFI"
+        ],
+        url: "https://vendas.online.sistemapacto.com.br/checkout?un=1&k=64cd3628f6921f9e13c26614c9874d37&pl=42"
+    }
+};
+
 const quizModal = document.getElementById('quiz-modal');
+
 function openQuizModal() {
     quizModal.classList.remove('hidden');
     quizModal.classList.add('flex');
+    toggleQuizFlexOption();
 }
+
 function closeQuizModal() {
     quizModal.classList.add('hidden');
     quizModal.classList.remove('flex');
 }
 
-function calculateIdealPlan() {
-    const age = document.getElementById('quiz-age').value;
+function toggleQuizFlexOption() {
     const focus = document.getElementById('quiz-focus').value;
-
-    let title = "";
-    let desc = "";
-
-    if (age === 'estudante') {
-        title = "STUDENTS PASS (1ª parcela R$ 29,90)";
-        desc = "Exclusivo para estudantes de 12 a 18 anos! Treine de Seg a Sex das 09h às 17h e Sáb/Dom livre com Olimpus App e Voucher Amigo.";
-    } else if (focus === 'musculacao') {
-        title = "PLANO OLIMPUS (1º mês R$ 69,90)";
-        desc = "Nosso campeão de vendas! Musculação livre todos os dias, Sala de Poses, Olimpus App e direito a 5 convidados por mês sem taxa de adesão.";
-    } else if (focus === 'misto') {
-        title = "PLANO PLUS (1º mês R$ 99,90)";
-        desc = "Ideal para variar os estímulos: inclui Musculação livre + CrossFit 1x/semana + Pilates 2x/mês + Avaliação Física.";
-    } else if (focus === 'crossfit') {
-        title = "CROSSFIT + ACADEMIA (R$ 339,90/mês)";
-        desc = "Performance máxima com acesso todos os dias ao Box de CrossFit e à Musculação completa.";
-    } else if (focus === 'tudo') {
-        title = "PLANO POWER VIP (R$ 399,90/mês)";
-        desc = "Experiência completa: CrossFit e Musculação todos os dias + Pilates 4x/mês + Sala de Poses + Avaliação Física.";
-    } else {
-        title = "STUDIO PILATES (R$ 249,90/mês)";
-        desc = "2 aulas por semana com agendamento via App, zero taxa de matrícula e zero manutenção anual.";
-    }
-
+    const flexWrapper = document.getElementById('quiz-flex-wrapper');
     const resultBox = document.getElementById('quiz-result');
-    document.getElementById('quiz-result-title').textContent = title;
-    document.getElementById('quiz-result-desc').textContent = desc;
-    resultBox.classList.remove('hidden');
 
-    const ctaBtn = document.getElementById('quiz-result-cta');
-    ctaBtn.onclick = () => {
-        closeQuizModal();
-        selectPlanForWhatsApp(title);
-    };
+    if (resultBox) resultBox.classList.add('hidden');
+
+    if (flexWrapper) {
+        if (focus === 'musculacao') {
+            flexWrapper.classList.remove('hidden');
+        } else {
+            flexWrapper.classList.add('hidden');
+        }
+    }
 }
 
+function calculateIdealPlan() {
+    const focus = document.getElementById('quiz-focus').value;
+    const modalityType = document.getElementById('quiz-modality-type').value;
+
+    let planKey = focus;
+    if (focus === 'musculacao') {
+        planKey = modalityType === 'flex' ? 'flex' : 'olimpus';
+    }
+
+    const plan = PACTO_PLANS_DATA[planKey];
+    if (!plan) return;
+
+    document.getElementById('quiz-result-title').textContent = plan.name;
+    document.getElementById('quiz-result-price').textContent = plan.price;
+
+    // Exibe ou oculta a tag de destaque ("O MAIS VENDIDO" / "O MAIS VANTAJOSO")
+    const badgeEl = document.getElementById('quiz-result-badge');
+    if (plan.highlight) {
+        badgeEl.textContent = plan.highlight;
+        badgeEl.classList.remove('hidden');
+    } else {
+        badgeEl.classList.add('hidden');
+    }
+
+    // Renderiza a lista fiel de benefícios
+    const benefitsListEl = document.getElementById('quiz-result-benefits');
+    benefitsListEl.innerHTML = plan.benefits.map(item => `
+        <li class="flex items-start gap-2">
+            <i class="fa-solid fa-check text-olimpus-gold mt-1"></i>
+            <span>${item}</span>
+        </li>
+    `).join('');
+
+    // Atualiza o botão para redirecionar diretamente para o checkout da Pacto
+    const ctaBtn = document.getElementById('quiz-result-cta');
+    ctaBtn.href = plan.url;
+
+    document.getElementById('quiz-result').classList.remove('hidden');
+}
 // 8. MÁSCARA DE TELEFONE E VALIDAÇÃO DO FORMULÁRIO DE AULA EXPERIMENTAL / CADASTRO
 const phoneInput = document.getElementById('lead-phone');
 phoneInput.addEventListener('input', (e) => {
