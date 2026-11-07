@@ -1035,69 +1035,77 @@
     </div>
 
     <!-- MODAL 2: QUIZ INTERATIVO "DESCUBRA SEU PLANO IDEAL" -->
+<!-- MODAL 2: QUIZ INTERATIVO "DESCUBRA SEU PLANO IDEAL" -->
     <div id="quiz-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-        <div class="bg-olimpus-card border border-olimpus-gold/40 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-gold-lg max-h-[90vh] overflow-y-auto">
-            <button onclick="closeQuizModal()" aria-label="Fechar Quiz" class="absolute top-5 right-5 w-9 h-9 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-600 hover:text-zinc-900 flex items-center justify-center transition">
+        <!-- Caixa externa: corta os cantos arredondados com overflow-hidden -->
+        <div class="bg-olimpus-card border border-olimpus-gold/40 rounded-3xl max-w-lg w-full relative shadow-gold-lg max-h-[90vh] flex flex-col overflow-hidden">
+            
+            <!-- Botão Fechar fixo no canto -->
+            <button onclick="closeQuizModal()" aria-label="Fechar Quiz" class="absolute top-5 right-5 z-10 w-9 h-9 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-600 hover:text-zinc-900 flex items-center justify-center transition">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <div class="flex items-center gap-2 text-olimpus-gold text-xs font-bold uppercase tracking-widest">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <span>Recomendador Olimpus</span>
-            </div>
-            <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase mt-1">Descubra Seu Plano Ideal</h3>
-
-            <div id="quiz-content" class="mt-5 space-y-5">
-                <div>
-                    <label for="quiz-focus" class="block text-xs font-bold uppercase text-zinc-700 mb-2">1. O que você deseja praticar?</label>
-                    <select id="quiz-focus" onchange="toggleQuizFlexOption()" class="w-full px-4 py-3 rounded-xl bg-white border border-zinc-300 text-zinc-900 text-sm focus:border-olimpus-gold focus:outline-none">
-                        <option value="musculacao">Apenas Musculação </option>
-                        <option value="plus">Musculação + Pilates + Crossfit </option>
-                        <option value="crossfit">Apenas Crossfit todos os dias</option>
-                        <option value="power">Completo: Crossfit e Musculação todos os dias + Pilates </option>
-                        <option value="pilates">Apenas Pilates </option>
-                    </select>
+            <!-- Container interno: recebe a rolagem (overflow-y-auto) e o padding -->
+            <div class="p-6 sm:p-8 overflow-y-auto modal-scroll">
+                <div class="flex items-center gap-2 text-olimpus-gold text-xs font-bold uppercase tracking-widest">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Recomendador Olimpus</span>
                 </div>
+                <h3 class="font-display text-2xl font-bold text-zinc-900 uppercase mt-1">Descubra Seu Plano Ideal</h3>
 
-                <!-- Pergunta 2: Exibida apenas quando "Apenas Musculação" está selecionada para diferenciar Olimpus e Flex -->
-                <div id="quiz-flex-wrapper">
-                    <label for="quiz-modality-type" class="block text-xs font-bold uppercase text-zinc-700 mb-2">2. Qual benefício é mais importante para você na Musculação?</label>
-                    <select id="quiz-modality-type" class="w-full px-4 py-3 rounded-xl bg-white border border-zinc-300 text-zinc-900 text-sm focus:border-olimpus-gold focus:outline-none">
-                        <option value="olimpus">5 Convidados/mês + Treino atualizado mensalmente</option>
-                        <option value="flex">Sem taxa de adesão e sem taxa de cancelamento</option>
-                    </select>
-                </div>
-
-                <button onclick="calculateIdealPlan()" class="w-full py-3.5 rounded-xl bg-olimpus-gold text-white font-extrabold text-sm uppercase tracking-wider hover:bg-olimpus-goldLight transition shadow-gold">
-                    Ver Meu Plano Recomendado
-                </button>
-
-                <!-- Resultado do Quiz -->
-                <div id="quiz-result" class="hidden p-5 rounded-2xl bg-olimpus-surface border-2 border-olimpus-gold space-y-4">
-                    <div class="flex items-center justify-between flex-wrap gap-2">
-                        <span class="text-[11px] uppercase tracking-widest text-olimpus-gold font-bold">Plano Recomendado:</span>
-                        <span id="quiz-result-badge" class="hidden bg-olimpus-gold text-white text-[10px] font-extrabold uppercase px-3 py-0.5 rounded-full tracking-wider"></span>
+                <div id="quiz-content" class="mt-5 space-y-5">
+                    <div>
+                        <label for="quiz-focus" class="block text-xs font-bold uppercase text-zinc-700 mb-2">1. O que você deseja praticar?</label>
+                        <select id="quiz-focus" onchange="toggleQuizFlexOption()" class="w-full px-4 py-3 rounded-xl bg-white border border-zinc-300 text-zinc-900 text-sm focus:border-olimpus-gold focus:outline-none">
+                            <option value="musculacao">Apenas Musculação (Treino livre todos os dias)</option>
+                            <option value="plus">Musculação + Pilates (2x/mês) + Crossfit (1x/semana)</option>
+                            <option value="crossfit">Apenas Crossfit todos os dias (Seg. a Dom.)</option>
+                            <option value="power">Completo: Crossfit e Musculação todos os dias + Pilates (4x/mês)</option>
+                            <option value="pilates">Apenas Pilates (2 aulas/semana)</option>
+                        </select>
                     </div>
 
-                    <div class="flex items-baseline justify-between border-b border-zinc-200 pb-3">
-                        <h4 id="quiz-result-title" class="font-display text-2xl font-bold text-zinc-900 uppercase"></h4>
-                        <div class="text-right">
-                            <span class="text-xs font-bold text-olimpus-gold">R$</span>
-                            <span id="quiz-result-price" class="font-display text-3xl font-bold text-zinc-900"></span>
-                            <span class="text-xs text-zinc-500">/mês</span>
+                    <!-- Pergunta 2: Exibida apenas quando "Apenas Musculação" está selecionada -->
+                    <div id="quiz-flex-wrapper">
+                        <label for="quiz-modality-type" class="block text-xs font-bold uppercase text-zinc-700 mb-2">2. Qual benefício é mais importante para você na Musculação?</label>
+                        <select id="quiz-modality-type" class="w-full px-4 py-3 rounded-xl bg-white border border-zinc-300 text-zinc-900 text-sm focus:border-olimpus-gold focus:outline-none">
+                            <option value="olimpus">5 Convidados/mês + Treino atualizado mensalmente (R$ 169,90)</option>
+                            <option value="flex">Sem taxa de adesão e sem taxa de cancelamento (R$ 199,90)</option>
+                        </select>
+                    </div>
+
+                    <button onclick="calculateIdealPlan()" class="w-full py-3.5 rounded-xl bg-olimpus-gold text-white font-extrabold text-sm uppercase tracking-wider hover:bg-olimpus-goldLight transition shadow-gold">
+                        Ver Meu Plano Recomendado
+                    </button>
+
+                    <!-- Resultado do Quiz -->
+                    <div id="quiz-result" class="hidden p-5 rounded-2xl bg-olimpus-surface border-2 border-olimpus-gold space-y-4">
+                        <div class="flex items-center justify-between flex-wrap gap-2">
+                            <span class="text-[11px] uppercase tracking-widest text-olimpus-gold font-bold">Plano Recomendado:</span>
+                            <span id="quiz-result-badge" class="hidden bg-olimpus-gold text-white text-[10px] font-extrabold uppercase px-3 py-0.5 rounded-full tracking-wider"></span>
                         </div>
+
+                        <div class="flex items-baseline justify-between border-b border-zinc-200 pb-3">
+                            <h4 id="quiz-result-title" class="font-display text-2xl font-bold text-zinc-900 uppercase"></h4>
+                            <div class="text-right">
+                                <span class="text-xs font-bold text-olimpus-gold">R$</span>
+                                <span id="quiz-result-price" class="font-display text-3xl font-bold text-zinc-900"></span>
+                                <span class="text-xs text-zinc-500">/mês</span>
+                            </div>
+                        </div>
+
+                        <!-- Lista exata de benefícios -->
+                        <ul id="quiz-result-benefits" class="space-y-2 text-xs sm:text-sm text-zinc-700"></ul>
+
+                        <!-- Link direto para o Sistema Pacto -->
+                        <a id="quiz-result-cta" href="#" target="_blank" rel="noopener noreferrer" class="btn-shine w-full py-3.5 rounded-xl bg-olimpus-gold hover:bg-olimpus-goldLight text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-gold">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Contratar Agora no Site</span>
+                        </a>
                     </div>
-
-                    <!-- Lista exata de benefícios -->
-                    <ul id="quiz-result-benefits" class="space-y-2 text-xs sm:text-sm text-zinc-700"></ul>
-
-                    <!-- Link direto para o Sistema Pacto -->
-                    <a id="quiz-result-cta" href="#" target="_blank" rel="noopener noreferrer" class="btn-shine w-full py-3.5 rounded-xl bg-olimpus-gold hover:bg-olimpus-goldLight text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-gold">
-                        <i class="fa-solid fa-bolt"></i>
-                        <span>Contratar Agora no Site</span>
-                    </a>
                 </div>
             </div>
+
         </div>
     </div>
 
